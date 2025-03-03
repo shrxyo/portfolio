@@ -4,7 +4,7 @@
 body {
     background-color: #f9f6ec;
     text-align: center;
-    font-family: 'Pixelify Sans';
+    font-family: 'Pixelify Sans', Regular;
     font-size: 40px;
     color: black;
     padding: 0;
@@ -27,14 +27,19 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     padding: 10px 15px;
-    color: black; /* Default text color */
-    border-radius: 5px; /* Optional: rounded edges */
+    color: black; 
+    border-radius: 5px; 
     transition: background 0.3s ease;
 }
 
 nav ul li a.active {
-    background-color: black; /* Black box */
-    color: white; /* White text */
+    background-color: black;
+    color: white;
+}
+
+nav ul li a.active:hover {
+    background-color: black; 
+    color: white;  
 }
 
 nav ul li a:hover {
@@ -52,12 +57,13 @@ h1 {
     font-size: 40px;
     font-weight: Regular;
     text-align: center;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 
 h3 {
     font-size: 24px;
     font-weight: Regular;
+    font-family: "Pixelify Sans";
 }
 
 .profile-img {
@@ -87,6 +93,56 @@ p {
     margin: 10px;
     text-decoration: none;
     color: black;
+}
+
+/* Focus Areas */
+.focus-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.focus-text {
+    font-size: 40px;
+    font-weight: Regular;
+    text-align: center;
+    margin-top: -10px;
+    font-family: "Abril Fatface";
+}
+
+/* Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    width: 68%; 
+    margin: 20px auto; 
+}
+
+.focus-btn {
+    margin-top: 8px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Pixelify Sans";
+    font-weight: Regular;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%; 
+    text-align: center;
+}
+
+.focus-btn:active {
+    background-color: #000;
+    color: #fff;
+    font-family: "Pixelify Sans";
+    font-weight: Regular;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 /* .clouds {

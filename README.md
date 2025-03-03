@@ -4,8 +4,8 @@ Welcome to my personal portfolio website! This is where I showcase my work, skil
 
 ## Tech Stack
 
-- **Frontend**: HTML, CSS
-- **Icons & Styling**: Iconify, Google Fonts
+- **Frontend**: HTML, CSS, JavaScript
+- **Design, Icons & Styling**: Figma, Iconify, Google Fonts
 - **Hosting**: GitHub Pages / Vercel (planned)
 
 <!-- ## How to Run Locally
