@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pixelify+Sans:wght@400..700&display=swap');
 
 body {
     background-color: #f9f6ec;
     text-align: center;
-    font-family: 'Pixelify Sans', cursive;
+    font-family: 'Pixelify Sans';
+    font-size: 40px;
     color: black;
     padding: 0;
     margin: 0;
@@ -15,7 +17,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 40px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 nav ul li {
@@ -24,60 +26,87 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    padding: 10px 15px;
+    color: black; /* Default text color */
+    border-radius: 5px; /* Optional: rounded edges */
+    transition: background 0.3s ease;
 }
 
-.hero {
+nav ul li a.active {
+    background-color: black; /* Black box */
+    color: white; /* White text */
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.main {
     margin-top: 40px;
 }
 
 h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-family: "Abril Fatface";
+    /* font-size: clamp(2rem, 5vw, 3rem);  */
+    font-size: 40px;
+    font-weight: Regular;
+    text-align: center;
+    margin-top: -20px;
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: Regular;
 }
 
 .profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 10px;
-    margin: 20px;
+
+    width: 280px;
+    height: 280px; 
+    object-fit: cover;
+    margin-top: -5px;
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 12px;
+    font-size: 20px;
     width: 60%;
     margin: auto;
-    line-height: 1.5;
+    text-align: justify;
+    width: 75%;
+    /* line-height: 1.5; */
 }
 
 .social-links {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .social-links a {
-    font-size: 30px;
+    font-size: 40px;
     margin: 10px;
     text-decoration: none;
     color: black;
 }
 
-.clouds {
+/* .clouds {
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50px; 
+    left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    position: fixed;
+    justify-content: space-around; 
+    pointer-events: none;
 }
 
 .clouds span {
-    font-size: 40px;
+    font-size: 80px;
     opacity: 0.5;
+    position: absolute;
 }
+
+.clouds span:nth-child(1) { top: 50px; left: 10%; }
+.clouds span:nth-child(2) { top: 80px; left: 30%; }
+.clouds span:nth-child(3) { top: 30px; left: 50%; }
+.clouds span:nth-child(4) { top: 90px; left: 70%; }
+.clouds span:nth-child(5) { top: 60px; left: 90%; } */
