@@ -1,9 +1,9 @@
 const tabs = [
-    { label: "About Me", key: "about" },
-    { label: "Experience", key: "experience" },
-    { label: "Projects", key: "projects" },
-    { label: "Skills", key: "skills" },
-    { label: "Contact Me", key: "contact" },
+    { label: "About Me", key: "about", icon: "src/assets/about.png" },
+    { label: "Experience", key: "experience", icon: "src/assets/folder.png" },
+    { label: "Projects", key: "projects", icon: "src/assets/folder.png" },
+    { label: "Skills", key: "skills", icon: "src/assets/folder.png" },
+    { label: "Contact Me", key: "contact", icon: "src/assets/folder.png" },
   ];
   
   export default function FolderGrid({ setActiveTab }) {
@@ -16,7 +16,7 @@ const tabs = [
             className="flex flex-col items-center cursor-pointer hover:scale-105 transition"
           >
             <img
-              src="src/assets/folder.png" 
+              src={tab.icon}
               alt={tab.label}
               className="w-12 h-12"
             />

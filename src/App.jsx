@@ -6,11 +6,29 @@ import WindowPage from "./components/Window";
 import Taskbar from "./components/Taskbar";
 import "./index.css";
 import wallpaper from "./assets/wallpaper.jpeg";
-import FolderGrid from "./components/FolderGrid";
-import ContentPanel from "./components/ContentPanel";
+
+const pages = [
+  {
+    key: 'landing',
+    label: 'Landing',
+    content: `Hi! I'm Shreya Balakrishna, a developer and designer passionate about building delightful digital experiences. Welcome to my portfolio!`,
+  },
+  { key: 'about', label: 'About Me' },
+  { key: 'experience', label: 'Experience' },
+  { key: 'projects', label: 'Projects' },
+  { key: 'skills', label: 'Skills' },
+  { key: 'contact', label: 'Contact Me' },
+];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('about');
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+
+  const goBack = () => setCurrentPageIndex(i => (i > 0 ? i - 1 : i));
+  const goForward = () => setCurrentPageIndex(i => (i < pages.length - 1 ? i + 1 : i));
+  const setPageByKey = (key) => {
+    const idx = pages.findIndex(p => p.key === key);
+    if (idx !== -1) setCurrentPageIndex(idx);
+  };
 
   return (
     <div
@@ -24,7 +42,14 @@ export default function App() {
     >
       {/* Centered Window */}
       <div className="flex-1 flex items-center justify-center">
-        <WindowPage activeTab={activeTab} setActiveTab={setActiveTab} />
+        <WindowPage
+          currentPage={pages[currentPageIndex]}
+          currentPageIndex={currentPageIndex}
+          pages={pages}
+          goBack={goBack}
+          goForward={goForward}
+          setPageByKey={setPageByKey}
+        />
       </div>
       {/* Taskbar at the bottom */}
       <Taskbar />
