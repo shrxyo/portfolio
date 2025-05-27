@@ -7,12 +7,7 @@ import Taskbar from "./components/Taskbar";
 import "./index.css";
 import wallpaper from "./assets/wallpaper.jpeg";
 
-const pages = [
-  {
-    key: 'landing',
-    label: 'Landing',
-    content: `Hi! I'm Shreya Balakrishna, a developer and designer passionate about building delightful digital experiences. Welcome to my portfolio!`,
-  },
+const sectionPages = [
   { key: 'about', label: 'About Me' },
   { key: 'experience', label: 'Experience' },
   { key: 'projects', label: 'Projects' },
@@ -20,14 +15,32 @@ const pages = [
   { key: 'contact', label: 'Contact Me' },
 ];
 
-export default function App() {
-  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+const allPages = [
+  { key: 'description', label: 'Description' },
+  { key: 'folders', label: 'Folders' },
+  ...sectionPages
+];
 
-  const goBack = () => setCurrentPageIndex(i => (i > 0 ? i - 1 : i));
-  const goForward = () => setCurrentPageIndex(i => (i < pages.length - 1 ? i + 1 : i));
-  const setPageByKey = (key) => {
-    const idx = pages.findIndex(p => p.key === key);
-    if (idx !== -1) setCurrentPageIndex(idx);
+export default function App() {
+  const [navStack, setNavStack] = useState(['description']);
+  const [navIndex, setNavIndex] = useState(0);
+
+  const currentPageKey = navStack[navIndex];
+  const currentPage = allPages.find(p => p.key === currentPageKey);
+
+  const pushPage = (key) => {
+    const newStack = navStack.slice(0, navIndex + 1);
+    setNavStack([...newStack, key]);
+    setNavIndex(newStack.length);
+  };
+  const popPage = () => {
+    if (navIndex > 0) setNavIndex(navIndex - 1);
+  };
+  const goForward = () => {
+    if (navIndex < navStack.length - 1) setNavIndex(navIndex + 1);
+  };
+  const goBack = () => {
+    if (navIndex > 0) setNavIndex(navIndex - 1);
   };
 
   return (
@@ -43,12 +56,13 @@ export default function App() {
       {/* Centered Window */}
       <div className="flex-1 flex items-center justify-center">
         <WindowPage
-          currentPage={pages[currentPageIndex]}
-          currentPageIndex={currentPageIndex}
-          pages={pages}
+          currentPage={currentPage}
+          navIndex={navIndex}
+          navStack={navStack}
           goBack={goBack}
           goForward={goForward}
-          setPageByKey={setPageByKey}
+          pushPage={pushPage}
+          sectionPages={sectionPages}
         />
       </div>
       {/* Taskbar at the bottom */}
