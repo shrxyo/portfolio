@@ -16,7 +16,7 @@ const tabs = [
             className="flex flex-col items-center cursor-pointer hover:scale-105 transition"
           >
             <img
-              src="/folder-icon.png" 
+              src="src/assets/folder.png" 
               alt={tab.label}
               className="w-12 h-12"
             />
