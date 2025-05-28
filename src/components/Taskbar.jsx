@@ -20,7 +20,7 @@ export default function Taskbar() {
   }, [showMenu]);
 
   return (
-    <div className="bg-blue-800 text-black px-4 py-2 text-sm flex justify-between items-center relative">
+    <div className="bg-blue-800 text-white px-4 py-2 text-sm flex justify-between items-center relative">
       <div className="relative">
         <button
           className="bg-green-600 px-3 py-1 rounded shadow"

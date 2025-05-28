@@ -45,7 +45,7 @@ export default function App() {
 
   return (
     <div
-      className="w-screen h-screen flex flex-col justify-between"
+      className="w-screen h-screen flex flex-col justify-between overflow-hidden"
       style={{
         backgroundImage: `url(${wallpaper})`,
         backgroundSize: 'cover',
