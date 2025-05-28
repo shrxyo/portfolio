@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -207,8 +206,8 @@ export default {
     },
     cursor: {
       auto: 'auto',
-      default: 'default',
-      pointer: 'pointer',
+      default: 'url("./src/assets/default_arrow.cur"), default',
+      pointer: 'url("./src/assets/harrow.cur"), pointer',
       wait: 'wait',
       text: 'text',
       move: 'move',
@@ -324,7 +323,13 @@ export default {
         '"Liberation Mono"',
         '"Courier New"',
         'monospace',
-      ],
+      ]
+      // 'helvetica': ['Helvetica BlackItalic', 'sans-serif'],
+      // 'franklin': ['Franklin Gothic Medium', 'sans-serif'],
+      // 'tahoma': ['Tahoma', 'sans-serif'],
+      // 'verdana': ['Verdana', 'sans-serif'],
+      // 'trebuchet': ['Trebuchet MS', 'sans-serif'],
+      // 'trebuchet-pixel': ['Trebuchet MS pixelated', 'sans-serif'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

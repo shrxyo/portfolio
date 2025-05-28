@@ -5,6 +5,7 @@ import { useState } from 'react'
 import WindowPage from "./components/Window";
 import Taskbar from "./components/Taskbar";
 import "./index.css";
+import ContactPanel from "./components/ContactPanel";
 import wallpaper from "./assets/wallpaper.jpeg";
 
 const sectionPages = [
@@ -45,7 +46,7 @@ export default function App() {
 
   return (
     <div
-      className="w-screen h-screen flex flex-col justify-between overflow-hidden"
+      className="w-screen h-screen flex flex-col justify-between overflow-hidden cursor-default"
       style={{
         backgroundImage: `url(${wallpaper})`,
         backgroundSize: 'cover',
