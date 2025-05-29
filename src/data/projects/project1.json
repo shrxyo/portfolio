@@ -1,0 +1,35 @@
+{
+  "mainHeading": "Portfolio Website",
+  "dates": "2024",
+  "technologies": [
+    {
+      "name": "React",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "name": "Vite",
+      "icon": "src/assets/folder.png"
+    }
+  ],
+  "context": "A personal portfolio website designed with a Windows XP theme, featuring a nostalgic user interface while maintaining modern web development practices.",
+  "objectives": [
+    "Create an interactive and engaging user experience",
+    "Implement a Windows XP-inspired design system",
+    "Showcase projects and experience in an organized manner",
+    "Ensure responsive design across different devices",
+    "Optimize performance and loading times"
+  ],
+  "features": [
+    "Custom cursor implementation",
+    "Draggable windows with resize functionality",
+    "Windows XP-style contact form",
+    "Interactive folder navigation",
+    "Responsive design with modern CSS"
+  ],
+  "githubLink": "https://github.com/yourusername/portfolio",
+  "liveLink": "https://your-portfolio-url.com"
+} 

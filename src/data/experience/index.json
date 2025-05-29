@@ -1,0 +1,25 @@
+{
+  "experiences": [
+    {
+      "id": "exp1",
+      "company": "TechCorp Solutions",
+      "designation": "Software Engineer",
+      "dates": "Jan 2022 - Present",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "id": "exp2",
+      "company": "Webify Labs",
+      "designation": "Frontend Developer",
+      "dates": "Jun 2021 - Dec 2021",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "id": "exp3",
+      "company": "DataNest Inc.",
+      "designation": "Intern",
+      "dates": "Jan 2021 - May 2021",
+      "icon": "src/assets/folder.png"
+    }
+  ]
+} 

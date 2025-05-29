@@ -1,0 +1,19 @@
+{
+  "company": "TechCorp Solutions",
+  "designation": "Software Engineer",
+  "dates": "Jan 2022 - Present",
+  "mainHeading": "TechCorp Solutions - Software Engineer",
+  "technologies": [
+    { "name": "React", "icon": "assets/react.svg" },
+    { "name": "Node.js", "icon": "assets/nodejs.svg" },
+    { "name": "AWS", "icon": "assets/aws.svg" }
+  ],
+  "context": "TechCorp Solutions is a leading provider of cloud-based business solutions. As a Software Engineer, I contributed to the development of scalable web applications and microservices.",
+  "objectives": [
+    "Developed a scalable web app for enterprise clients",
+    "Led a team of 4 engineers",
+    "Optimized performance and SEO",
+    "Integrated AWS services for deployment",
+    "Improved code quality and test coverage"
+  ]
+} 

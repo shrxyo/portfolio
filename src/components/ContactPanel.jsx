@@ -41,6 +41,7 @@ export default function ContactPanel() {
 
   return (
     <div className="flex-1 flex flex-col w-full">
+        
       {/* Toolbar */}
       <div className="bg-gray-100 border-b border-gray-300 flex gap-4 px-4 py-2 text-xl select-none">
         <span title="Send">📤</span>

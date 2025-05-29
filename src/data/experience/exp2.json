@@ -1,0 +1,18 @@
+{
+  "company": "Webify Labs",
+  "designation": "Frontend Developer",
+  "dates": "Jun 2021 - Dec 2021",
+  "mainHeading": "Webify Labs - Frontend Developer",
+  "technologies": [
+    { "name": "Vue.js", "icon": "assets/vue.svg" },
+    { "name": "Sass", "icon": "assets/sass.svg" },
+    { "name": "Jest", "icon": "assets/jest.svg" }
+  ],
+  "context": "Webify Labs specializes in building modern, responsive websites for startups. I worked as a Frontend Developer, focusing on UI/UX and performance.",
+  "objectives": [
+    "Built responsive landing pages for clients",
+    "Implemented unit and integration tests",
+    "Collaborated with designers for pixel-perfect UI",
+    "Enhanced accessibility and cross-browser support"
+  ]
+} 

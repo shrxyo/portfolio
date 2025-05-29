@@ -4,7 +4,6 @@ export default function Taskbar() {
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 
-  // Close menu when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {

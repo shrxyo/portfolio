@@ -1,0 +1,40 @@
+{
+  "mainHeading": "E-Commerce Platform",
+  "dates": "2023",
+  "technologies": [
+    {
+      "name": "React",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "name": "Node.js",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "name": "Express",
+      "icon": "src/assets/folder.png"
+    }
+  ],
+  "context": "A full-stack e-commerce platform designed to provide a seamless shopping experience with modern features and robust backend functionality.",
+  "objectives": [
+    "Create a scalable and secure e-commerce platform",
+    "Implement user authentication and authorization",
+    "Develop a responsive and intuitive user interface",
+    "Integrate secure payment processing",
+    "Build an efficient product management system"
+  ],
+  "features": [
+    "User authentication and profile management",
+    "Product catalog with search and filtering",
+    "Shopping cart and wishlist functionality",
+    "Secure payment gateway integration",
+    "Order tracking and management system",
+    "Admin dashboard for inventory management"
+  ],
+  "githubLink": "https://github.com/yourusername/ecommerce-platform",
+  "liveLink": "https://your-ecommerce-url.com"
+} 

@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": "project1",
+      "title": "Portfolio Website",
+      "icon": "src/assets/folder.png",
+      "shortDescription": "A Windows XP themed portfolio website",
+      "dates": "2024"
+    },
+    {
+      "id": "project2",
+      "title": "E-Commerce Platform",
+      "icon": "src/assets/folder.png",
+      "shortDescription": "Full-stack e-commerce solution",
+      "dates": "2023"
+    },
+    {
+      "id": "project3",
+      "title": "Task Management App",
+      "icon": "src/assets/folder.png",
+      "shortDescription": "Collaborative task management application",
+      "dates": "2023"
+    }
+  ]
+} 

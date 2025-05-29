@@ -1,8 +1,46 @@
 import FolderGrid from "./FolderGrid";
 import { Rnd } from "react-rnd";
 import ContactPanel from "./ContactPanel";
+import ExperienceGrid from "./ExperienceGrid";
+import ExperienceDetail from "./ExperienceDetail";
+import ProjectsGrid from "./ProjectsGrid";
+import ProjectDetail from "./ProjectDetail";
+import LandingPage from "./LandingPage";
+import { useState } from "react";
 
-export default function WindowPage({ currentPage, navIndex, navStack, goBack, goForward, pushPage, sectionPages }) {
+export default function WindowPage({ currentPage, navIndex, navStack, goBack, goForward, pushPage, sectionPages, onClose }) {
+  const [openExpId, setOpenExpId] = useState(null);
+  const [openProjectId, setOpenProjectId] = useState(null);
+
+  const renderContent = () => {
+    switch (currentPage.key) {
+      case 'description':
+        return <LandingPage onMenuClick={() => pushPage('folders')} />;
+      case 'folders':
+        return <FolderGrid setActiveTab={pushPage} />;
+      case 'experience':
+        return openExpId ? (
+          <ExperienceDetail expId={openExpId} onBack={() => setOpenExpId(null)} />
+        ) : (
+          <ExperienceGrid onSelect={setOpenExpId} />
+        );
+      case 'projects':
+        return openProjectId ? (
+          <ProjectDetail projectId={openProjectId} onBack={() => setOpenProjectId(null)} />
+        ) : (
+          <ProjectsGrid onSelect={setOpenProjectId} />
+        );
+      case 'contact':
+        return <ContactPanel />;
+      default:
+        if (sectionPages.some(s => s.key === currentPage.key)) {
+          const SectionComponent = sectionPages.find(s => s.key === currentPage.key)?.component;
+          return SectionComponent ? <SectionComponent /> : null;
+        }
+        return null;
+    }
+  };
+
   return (
     <Rnd
       default={{
@@ -22,58 +60,25 @@ export default function WindowPage({ currentPage, navIndex, navStack, goBack, go
         {/* Title Bar */}
         <div className={`text-white text-sm font-semibold px-4 py-1 flex justify-between items-center drag-handle select-none cursor-default ${currentPage.key === 'contact' ? 'bg-blue-700' : 'bg-blue-700'}`}>
           <span>{currentPage.key === 'contact' ? 'Contact me' : 'Shreya Balakrishna'}</span>
-          <div className="text-xs">_ □ ✕</div>
+          <div className="text-xs flex gap-1">
+            <span>_</span>
+            <span>□</span>
+            <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onClose}>✕</span>
+          </div>
         </div>
         {/* Menu Bar */}
-        {currentPage.key === 'contact' ? (
-          <>
-            <div className="bg-gray-200 text-xs px-4 py-1 border-b border-gray-300 flex gap-4 select-none">
-              <span>File</span>
-              <span>Edit</span>
-              <span>View</span>
-              <span>Insert</span>
-              <span>Format</span>
-              <span>Tools</span>
-              <span>Message</span>
-              <span>Help</span>
-            </div>
-            <ContactPanel />
-          </>
-        ) : (
-          <>
-            <div className="bg-gray-200 text-[13px] px-4 py-1 border-b border-gray-300 flex items-center">
-              <span>File &nbsp; Edit &nbsp; Place &nbsp; Holder</span>
-              <div className="ml-auto flex gap-2">
-                <button onClick={goBack} disabled={navIndex === 0} className="px-2 py-1 border rounded disabled:opacity-50 ml-2">&#8592; Back</button>
-                <button onClick={goForward} disabled={navIndex === navStack.length - 1 || navIndex === 0} className="px-2 py-1 border rounded disabled:opacity-50">Forward &#8594;</button>
-              </div>
-            </div>
-            {/* Content */}
-            <div className="flex-1 flex flex-col items-center justify-center bg-white p-8 w-full">
-              {currentPage.key === 'description' && (
-                <>
-                  <div className="text-base text-gray-800 text-center max-w-xl mb-8">
-                    Hi! I'm Shreya Balakrishna, a developer and designer passionate about building delightful digital experiences. Welcome to my portfolio!
-                  </div>
-                  <button
-                    className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition"
-                    onClick={() => pushPage('folders')}
-                  >
-                    View Folders
-                  </button>
-                </>
-              )}
-              {currentPage.key === 'folders' && (
-                <FolderGrid setActiveTab={pushPage} />
-              )}
-              {sectionPages.some(s => s.key === currentPage.key) && currentPage.key !== 'contact' && (
-                <div className="text-base text-gray-800 text-center max-w-xl">
-                  {currentPage.label}
-                </div>
-              )}
-            </div>
-          </>
-        )}
+        <div className="bg-gray-200 text-sm text-[13px] px-4 py-1 border-b border-gray-300 flex items-center justify-between">
+          <span>File &nbsp; Edit &nbsp; Place &nbsp; Holder</span>
+          <div className="ml-auto flex gap-2">
+            <button onClick={goBack} disabled={navIndex === 0} className="px-2 py-1 border rounded disabled:opacity-50 ml-2">&#8592; Back</button>
+            <button onClick={goForward} disabled={navIndex === navStack.length - 1 || navIndex === 0} className="px-2 py-1 border rounded disabled:opacity-50">Forward &#8594;</button>
+          </div>
+        </div>
+        {/* Content */}
+        {/* below code works for now, got to make it better later. */}
+        <div className={`flex-1 flex flex-col ${currentPage.key === 'folders' ? 'items-start justify-start' : 'items-center justify-center'} bg-white p-8 w-full overflow-auto min-h-0`}>
+          {renderContent()}
+        </div>
       </div>
     </Rnd>
   );

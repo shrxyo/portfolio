@@ -8,19 +8,19 @@ const tabs = [
   
   export default function FolderGrid({ setActiveTab }) {
     return (
-      <div className="flex gap-6 justify-center mb-4 flex-wrap cursor-default">
+      <div className="flex flex-wrap gap-6 p-4 items-start justify-start cursor-default w-full">
         {tabs.map(tab => (
           <div
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className="flex flex-col items-center cursor-pointer hover:scale-105 transition"
+            className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-3 rounded transition w-32"
           >
             <img
               src={tab.icon}
               alt={tab.label}
-              className="w-12 h-12"
+              className="w-16 h-16"
             />
-            <p className="text-xs mt-1">{tab.label}</p>
+            <p className="text-sm font-medium mt-2 text-center">{tab.label}</p>
           </div>
         ))}
       </div>

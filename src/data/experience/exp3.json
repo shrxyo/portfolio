@@ -1,0 +1,18 @@
+{
+  "company": "DataNest Inc.",
+  "designation": "Intern",
+  "dates": "Jan 2021 - May 2021",
+  "mainHeading": "DataNest Inc. - Intern",
+  "technologies": [
+    { "name": "Python", "icon": "assets/python.svg" },
+    { "name": "Pandas", "icon": "assets/pandas.svg" },
+    { "name": "Jupyter", "icon": "assets/jupyter.svg" }
+  ],
+  "context": "DataNest Inc. is a data analytics startup. As an intern, I assisted in data cleaning, analysis, and visualization for client projects.",
+  "objectives": [
+    "Cleaned and processed large datasets",
+    "Created data visualizations for reports",
+    "Automated data pipelines using Python",
+    "Presented findings to the team"
+  ]
+} 
