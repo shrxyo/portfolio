@@ -8,7 +8,7 @@ const tabs = [
   
   export default function FolderGrid({ setActiveTab }) {
     return (
-      <div className="flex flex-wrap gap-6 p-4 items-start justify-start cursor-default w-full">
+      <div className="flex flex-wrap gap-4 p-2 items-start justify-start cursor-default w-full">
         {tabs.map(tab => (
           <div
             key={tab.key}

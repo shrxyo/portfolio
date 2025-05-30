@@ -11,8 +11,8 @@ export default function ExperienceDetail({ expId, onBack }) {
 
   return (
     <div className="w-full h-full overflow-y-auto">
-      <div className="max-w-2xl mx-auto p-4">
-        <div className="text-2xl font-bold mb-2">{data.mainHeading}</div>
+      <div className="max-w-2xl mx-auto ">
+        <div className="text-2xl font-bold ">{data.mainHeading}</div>
         <div className="text-lg font-semibold mb-4 flex items-center gap-2">
           <span role="img" aria-label="calendar">📅</span>
           {data.dates}
@@ -37,7 +37,6 @@ export default function ExperienceDetail({ expId, onBack }) {
             ))}
           </ul>
         </div>
-        <button onClick={onBack} className="mt-6 bg-blue-700 text-white px-4 py-1 rounded shadow hover:bg-blue-800 transition text-xs cursor-pointer">Back to Experiences</button>
       </div>
     </div>
   );

@@ -20,15 +20,15 @@ export default function ContactPanel() {
     setStatus(null);
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID', // EmailJS service ID
-        'YOUR_TEMPLATE_ID', // EmailJS template ID
+        'service_i8d59dw', // service ID
+        'template_9co6phr', // template ID
         {
           to_email: 'shreyabalakrishna02@gmail.com',
           from_email: form.from_email,
           subject: form.subject,
           message: form.message,
         },
-        'YOUR_USER_ID' // EmailJS public key
+        'fnFcYG7sKFLMbNaeC' // public key
       );
       setStatus('success');
       setForm({ from_email: '', subject: '', message: '' });
@@ -41,8 +41,7 @@ export default function ContactPanel() {
 
   return (
     <div className="flex-1 flex flex-col w-full">
-        
-      {/* Toolbar */}
+      {/* Toolbar
       <div className="bg-gray-100 border-b border-gray-300 flex gap-4 px-4 py-2 text-xl select-none">
         <span title="Send">📤</span>
         <span title="Cut">✂️</span>
@@ -54,7 +53,7 @@ export default function ContactPanel() {
         <span title="Attach">📎</span>
         <span title="Priority">❗</span>
         <span title="Sign">🔑</span>
-      </div>
+      </div> */}
       {/* Form */}
       <form onSubmit={handleSubmit} className="flex-1 flex flex-col px-4 py-2 gap-2">
         <div className="flex items-center gap-2">

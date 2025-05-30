@@ -9,12 +9,13 @@ import "./index.css";
 import ContactPanel from "./components/ContactPanel";
 import wallpaper from "./assets/wallpaper.jpeg";
 import AboutMePage from "./components/AboutMePage";
+import SkillsPage from "./components/SkillsPage";
 
 const sectionPages = [
   { key: 'about', label: 'About Me', component: AboutMePage },
   { key: 'experience', label: 'Experience' },
   { key: 'projects', label: 'Projects' },
-  { key: 'skills', label: 'Skills' },
+  { key: 'skills', label: 'Skills', component: SkillsPage },
   { key: 'contact', label: 'Contact Me' },
 ];
 
@@ -27,10 +28,12 @@ const allPages = [
 export default function App() {
   const [navStack, setNavStack] = useState(['description']);
   const [navIndex, setNavIndex] = useState(0);
-  const [isWindowVisible, setIsWindowVisible] = useState(true);
+  const [windowState, setWindowState] = useState('open'); // 'open', 'minimized', 'maximized'
 
   const currentPageKey = navStack[navIndex];
-  const currentPage = allPages.find(p => p.key === currentPageKey);
+  const currentPage = currentPageKey.startsWith('experience-') 
+    ? { key: currentPageKey, label: 'Experience Detail' }
+    : allPages.find(p => p.key === currentPageKey);
 
   const pushPage = (key) => {
     const newStack = navStack.slice(0, navIndex + 1);
@@ -47,21 +50,34 @@ export default function App() {
   };
 
   const toggleWindow = () => {
-    setIsWindowVisible(!isWindowVisible);
-    if (!isWindowVisible) {
-      // Reset to initial state when opening window
-      setNavStack(['description']);
-      setNavIndex(0);
+    setWindowState(prev => prev === 'open' ? 'minimized' : 'open');
+    if (windowState === 'minimized') {
+       setNavStack(['description']);
+       setNavIndex(0);
     }
   };
 
   const closeWindow = () => {
-    setIsWindowVisible(false);
+    setWindowState('closed'); 
   };
+
+  const handlePortfolioClick = () => {
+     setWindowState('open');
+  };
+
+  const handleMinimize = () => {
+    setWindowState('minimized');
+  };
+
+  const handleMaximizeRestore = () => {
+    setWindowState(prev => prev === 'maximized' ? 'open' : 'maximized');
+  };
+
+  const isWindowRendered = windowState !== 'minimized' && windowState !== 'closed';
 
   return (
     <div
-      className="w-screen h-screen flex flex-col justify-between overflow-hidden cursor-default"
+      className="w-screen h-screen flex flex-col justify-between overflow-hidden cursor-default scrollbar-hide"
       style={{
         backgroundImage: `url(${wallpaper})`,
         backgroundSize: 'cover',
@@ -70,11 +86,10 @@ export default function App() {
       }}
     >
       {/* Desktop Icons */}
-      <DesktopIcons onPortfolioClick={toggleWindow} />
+      <DesktopIcons onPortfolioClick={handlePortfolioClick} />
 
-      {/* Centered Window */}
-      {isWindowVisible && (
-        <div className="flex-1 flex items-center justify-center">
+      {/* Window */} {/* Removed Centered Window div */}
+      {isWindowRendered && (
           <WindowPage
             currentPage={currentPage}
             navIndex={navIndex}
@@ -83,13 +98,14 @@ export default function App() {
             goForward={goForward}
             pushPage={pushPage}
             sectionPages={sectionPages}
-            onClose={closeWindow}
+            onClose={() => setWindowState('closed')}
+            onMinimize={handleMinimize}
+            onMaximizeRestore={handleMaximizeRestore}
+            windowState={windowState} 
           />
-        </div>
       )}
 
-      {/* Taskbar at the bottom */}
-      <Taskbar />
+      <Taskbar windowState={windowState} onWindowRestore={() => setWindowState('open')} currentPage={currentPage} /> 
     </div>
   );
 }

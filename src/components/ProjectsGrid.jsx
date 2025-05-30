@@ -2,12 +2,12 @@ import projectsData from '../data/projects/index.json';
 
 export default function ProjectsGrid({ onSelect }) {
   return (
-    <div className="flex gap-8 justify-center flex-wrap mt-8">
+    <div className="flex flex-wrap gap-6 p-4 items-start justify-start cursor-default w-full">
       {projectsData.projects.map(project => (
         <div
           key={project.id}
           onClick={() => onSelect(project.id)}
-          className="flex flex-col items-center cursor-pointer hover:scale-105 transition"
+          className="flex flex-col items-center cursor-pointer hover:bg-gray-100 rounded transition w-32"
         >
           <img
             src={project.icon}

@@ -1,65 +1,96 @@
 import { useState, useRef, useEffect } from 'react';
 
-export default function Taskbar() {
+export default function Taskbar({ windowState, onWindowRestore, currentPage }) {
   const [showMenu, setShowMenu] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
   const menuRef = useRef(null);
+  const startButtonRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuRef.current && !menuRef.current.contains(event.target) &&
+        startButtonRef.current && !startButtonRef.current.contains(event.target)
+      ) {
         setShowMenu(false);
       }
     }
     if (showMenu) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mouseup', handleClickOutside);
     } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mouseup', handleClickOutside);
     }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mouseup', handleClickOutside);
   }, [showMenu]);
 
+  const buttonBgClass = windowState === 'minimized' ? 'bg-blue-500' : 'bg-blue-900';
+
   return (
-    <div className="bg-blue-800 text-white px-4 py-2 text-sm flex justify-between items-center relative cursor-default">
-      <div className="relative">
-        <button
-          className="bg-green-600 px-3 py-1 rounded shadow cursor-pointer"
-          onClick={() => setShowMenu((v) => !v)}
-        >
-          Start
-        </button>
-        {showMenu && (
-          <div
-            ref={menuRef}
-            className="absolute left-0 bottom-12 bg-white border border-gray-300 rounded shadow-lg p-4 min-w-[200px] z-50"
+    <div className="bottom-0 left-0 w-full bg-blue-800 text-white px-4 py-2 text-sm flex justify-between items-center fixed cursor-default z-50">
+      <div className="flex items-center gap-2">
+        <div className="relative">
+          <button
+            ref={startButtonRef}
+            className="bg-green-600 px-3 py-1 rounded shadow cursor-pointer"
+            onClick={(event) => {
+              event.stopPropagation();
+              setShowMenu((v) => !v);
+            }}
           >
-            <div className="font-bold mb-2">Social Media</div>
-            <ul className="space-y-2">
-              <li>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
-                  Twitter
-                </a>
-              </li>
-            </ul>
-            <button
-              className="mt-4 w-full bg-blue-600 text-white py-1 rounded hover:bg-blue-700 transition cursor-pointer"
-              onClick={() => setShowMenu(false)}
+            Start
+          </button>
+          {showMenu && (
+            <div
+              ref={menuRef}
+              className="absolute left-0 bottom-12 bg-white border border-gray-300 rounded shadow-lg p-4 min-w-[200px] z-50"
             >
-              Close
-            </button>
-          </div>
+              <div className="font-bold mb-2">Social Media</div>
+              <ul className="space-y-2">
+                <li>
+                  <a href="https://github.com/shrxyo" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/shreya-balakrishna-a67772201/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/raeneyy/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
+                    Instagram
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
+
+        {windowState !== 'closed' && (
+          <button
+            className={`${buttonBgClass} px-3 py-1 rounded shadow cursor-pointer`}
+            onClick={onWindowRestore}
+          >
+            {currentPage?.label || 'Window'}
+          </button>
         )}
       </div>
-      <span className="cursor-default">12:05 AM</span>
+
+      <span className="cursor-default">
+        {currentTime.toLocaleTimeString('en-US', {
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true
+        })}
+      </span>
     </div>
   );
 }

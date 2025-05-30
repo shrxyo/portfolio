@@ -2,24 +2,24 @@
   "projects": [
     {
       "id": "project1",
-      "title": "Portfolio Website",
+      "title": "Emotional Intelligence Assistant",
       "icon": "src/assets/folder.png",
       "shortDescription": "A Windows XP themed portfolio website",
-      "dates": "2024"
+      "dates": "May 2025"
     },
     {
       "id": "project2",
-      "title": "E-Commerce Platform",
+      "title": "Text augmentation using LLMs",
       "icon": "src/assets/folder.png",
       "shortDescription": "Full-stack e-commerce solution",
-      "dates": "2023"
+      "dates": "September 2024"
     },
     {
       "id": "project3",
-      "title": "Task Management App",
+      "title": "SomniSage",
       "icon": "src/assets/folder.png",
       "shortDescription": "Collaborative task management application",
-      "dates": "2023"
+      "dates": "January 2024"
     }
   ]
 } 

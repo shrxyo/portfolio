@@ -3,21 +3,21 @@ import React from 'react';
 const icons = [
   {
     label: "Resume",
-    icon: "src/assets/resume.png", 
+    icon: "src/assets/resume.png",
     onClick: () => window.open("https://drive.google.com/file/d/1G9pC7W7h7co3StkixOIGsM2EUOK40rRr/view?usp=sharing", "_blank"),
     type: "link"
   },
   {
     label: "Portfolio",
-    icon: "src/assets/folder.png", 
-    onClick: null, 
+    icon: "src/assets/folder.png",
+    onClick: null,
     type: "window"
   }
 ];
 
 export default function DesktopIcons({ onPortfolioClick }) {
   return (
-    <div className="fixed top-0 left-0 p-4 flex flex-col gap-6">
+    <div className="absolute top-4 left-4 flex flex-col gap-6">
       {icons.map((icon, index) => (
         <div
           key={index}
@@ -33,7 +33,7 @@ export default function DesktopIcons({ onPortfolioClick }) {
           <img
             src={icon.icon}
             alt={icon.label}
-            className="w-12 h-12 mb-1 group-hover:scale-110 transition-transform"
+            className="w-12 h-12 mb-1"
           />
           <p className="text-sm text-white text-center bg-black/50 px-1 rounded">
             {icon.label}

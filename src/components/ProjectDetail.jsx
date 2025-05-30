@@ -14,10 +14,33 @@ export default function ProjectDetail({ projectId, onBack }) {
       <div className="max-w-2xl mx-auto p-4">
         <div className="text-2xl font-bold mb-2">{data.mainHeading}</div>
         <div className="text-lg font-semibold mb-4 flex items-center gap-2">
-          <span role="img" aria-label="calendar">📅</span>
+          
           {data.dates}
         </div>
-        
+
+        <div className="flex gap-4 mb-6">
+          {data.githubLink && (
+            <a
+              href={data.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 text-white px-4 py-1 rounded shadow hover:bg-gray-700 transition text-xs cursor-pointer"
+            >
+              View on GitHub
+            </a>
+          )}
+          {data.liveLink && (
+            <a
+              href={data.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white px-4 py-1 rounded shadow hover:bg-blue-700 transition text-xs cursor-pointer"
+            >
+              Documentation
+            </a>
+          )}
+        </div>
+
         {/* Technologies */}
         <div className="flex gap-6 mb-6 flex-wrap">
           {data.technologies.map(tech => (
@@ -54,36 +77,6 @@ export default function ProjectDetail({ projectId, onBack }) {
           </ul>
         </div>
 
-        {/* Links */}
-        <div className="flex gap-4 mt-6">
-          {data.githubLink && (
-            <a 
-              href={data.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-4 py-1 rounded shadow hover:bg-gray-700 transition text-xs cursor-pointer"
-            >
-              View on GitHub
-            </a>
-          )}
-          {data.liveLink && (
-            <a 
-              href={data.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-4 py-1 rounded shadow hover:bg-blue-700 transition text-xs cursor-pointer"
-            >
-              Live Demo
-            </a>
-          )}
-        </div>
-
-        <button 
-          onClick={onBack} 
-          className="mt-6 bg-blue-700 text-white px-4 py-1 rounded shadow hover:bg-blue-800 transition text-xs cursor-pointer"
-        >
-          Back to Projects
-        </button>
       </div>
     </div>
   );

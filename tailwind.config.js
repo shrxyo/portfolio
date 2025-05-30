@@ -7,6 +7,53 @@ export default {
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Kosugi Maru', 'sans-serif'],
+      },
+      
+      icons: {
+        desktop: {
+          resume: 'src/assets/resume.png',
+          folder: 'src/assets/folder.png',
+          about: 'src/assets/about.png',
+        },
+        social: {
+          github: 'src/assets/github.png',
+          linkedin: 'src/assets/linkedin.png',
+          twitter: 'src/assets/twitter.png',
+        },
+        tech: {
+          react: 'assets/react.svg',
+          nodejs: 'assets/nodejs.svg',
+          aws: 'assets/aws.svg',
+          vue: 'assets/vue.svg',
+          sass: 'assets/sass.svg',
+          jest: 'assets/jest.svg',
+          firebase: 'src/assets/folder.png',
+          materialui: 'src/assets/folder.png',
+          redux: 'src/assets/folder.png',
+        },
+        ui: {
+          calendar: '📅',
+          send: '📤',
+          cut: '✂️',
+          copy: '📋',
+          paste: '📄',
+          undo: '↩️',
+          check: '✔️',
+          spelling: '🔤',
+          attach: '📎',
+          priority: '❗',
+          sign: '🔑',
+          minimize: '_',
+          maximize: '□',
+          close: '✕',
+          back: '&#8592;',
+          forward: '&#8594;',
+        },
+      },
+    },
     accentColor: ({ theme }) => ({
       ...theme('colors'),
       auto: 'auto',
@@ -304,15 +351,7 @@ export default {
       DEFAULT: '1',
     },
     fontFamily: {
-      sans: [
-        'ui-sans-serif',
-        'system-ui',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
+      sans: ['Kosugi Maru', 'sans-serif'],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
         'ui-monospace',

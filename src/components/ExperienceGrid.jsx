@@ -7,7 +7,7 @@ export default function ExperienceGrid({ onSelect }) {
         <div
           key={exp.id}
           onClick={() => onSelect(exp.id)}
-          className="flex flex-col items-center cursor-pointer hover:scale-105 transition"
+          className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-3 rounded transition w-32"
         >
           <img
             src={exp.icon}
@@ -15,7 +15,7 @@ export default function ExperienceGrid({ onSelect }) {
             className="w-16 h-16 mb-2"
           />
           <div className="text-sm font-bold text-center">{exp.company}</div>
-          <div className="text-xs text-center">{exp.designation}</div>
+          <div className="text-xs text-gray-500 text-center">{exp.designation}</div>
         </div>
       ))}
     </div>
