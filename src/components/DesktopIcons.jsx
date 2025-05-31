@@ -1,21 +1,24 @@
 import React, { useState, useRef } from 'react';
+import resumeIcon from '../assets/resume.png';
+import folderIcon from '../assets/folder.png';
+import contactIcon from '../assets/folder.png'; 
 
 const icons = [
   {
     label: "Resume",
-    icon: "src/assets/resume.png",
+    icon: resumeIcon,
     onClick: () => window.open("https://drive.google.com/file/d/1G9pC7W7h7co3StkixOIGsM2EUOK40rRr/view?usp=sharing", "_blank"),
     type: "link"
   },
   {
     label: "Portfolio",
-    icon: "src/assets/folder.png",
+    icon: folderIcon,
     onClick: null,
     type: "window"
   },
   {
     label: "Contact",
-    icon: "src/assets/folder.png",
+    icon: contactIcon,
     onClick: null,
     type: "contact"
   }
