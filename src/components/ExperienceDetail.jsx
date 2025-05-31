@@ -14,7 +14,7 @@ export default function ExperienceDetail({ expId, onBack }) {
       <div className="max-w-2xl mx-auto ">
         <div className="text-2xl font-bold ">{data.mainHeading}</div>
         <div className="text-lg font-semibold mb-4 flex items-center gap-2">
-          <span role="img" aria-label="calendar">📅</span>
+
           {data.dates}
         </div>
         <div className="flex gap-6 mb-6 flex-wrap">

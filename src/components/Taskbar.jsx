@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-export default function Taskbar({ windowState, onWindowRestore, currentPage }) {
+export default function Taskbar({ windows, onWindowRestore, portfolioCurrentPage }) {
   const [showMenu, setShowMenu] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const menuRef = useRef(null);
@@ -31,21 +31,19 @@ export default function Taskbar({ windowState, onWindowRestore, currentPage }) {
     return () => document.removeEventListener('mouseup', handleClickOutside);
   }, [showMenu]);
 
-  const buttonBgClass = windowState === 'minimized' ? 'bg-blue-500' : 'bg-blue-900';
-
   return (
     <div className="bottom-0 left-0 w-full bg-blue-800 text-white px-4 py-2 text-sm flex justify-between items-center fixed cursor-default z-50">
       <div className="flex items-center gap-2">
         <div className="relative">
           <button
             ref={startButtonRef}
-            className="bg-green-600 px-3 py-1 rounded shadow cursor-pointer"
+            className="bg-green-600 px-4 py-1 shadow cursor-pointer"
             onClick={(event) => {
               event.stopPropagation();
               setShowMenu((v) => !v);
             }}
           >
-            Start
+            <span>Start</span>
           </button>
           {showMenu && (
             <div
@@ -74,14 +72,18 @@ export default function Taskbar({ windowState, onWindowRestore, currentPage }) {
           )}
         </div>
 
-        {windowState !== 'closed' && (
-          <button
-            className={`${buttonBgClass} px-3 py-1 rounded shadow cursor-pointer`}
-            onClick={onWindowRestore}
-          >
-            {currentPage?.label || 'Window'}
-          </button>
-        )}
+        {/* Window Buttons */}
+        {Object.entries(windows).map(([windowId, window]) => (
+          window.state !== 'closed' && (
+            <button
+              key={windowId}
+              className={`${window.state === 'minimized' ? 'bg-blue-500' : 'bg-blue-900'} px-3 py-1 shadow cursor-pointer`}
+              onClick={() => onWindowRestore(windowId)}
+            >
+              {windowId === 'portfolio' ? portfolioCurrentPage?.label : window.currentPage?.label}
+            </button>
+          )
+        ))}
       </div>
 
       <span className="cursor-default">

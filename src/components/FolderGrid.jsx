@@ -3,7 +3,6 @@ const tabs = [
     { label: "Experience", key: "experience", icon: "src/assets/folder.png" },
     { label: "Projects", key: "projects", icon: "src/assets/folder.png" },
     { label: "Skills", key: "skills", icon: "src/assets/folder.png" },
-    { label: "Contact Me", key: "contact", icon: "src/assets/folder.png" },
   ];
   
   export default function FolderGrid({ setActiveTab }) {
@@ -20,7 +19,7 @@ const tabs = [
               alt={tab.label}
               className="w-16 h-16"
             />
-            <p className="text-sm font-medium mt-2 text-center">{tab.label}</p>
+            <p className="text-sm font-medium mt-2 text-center ">{tab.label}</p>
           </div>
         ))}
       </div>

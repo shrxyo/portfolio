@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 export default function ContactPanel() {
   const [form, setForm] = useState({
@@ -19,19 +18,37 @@ export default function ContactPanel() {
     setLoading(true);
     setStatus(null);
     try {
-      await emailjs.send(
-        'service_i8d59dw', // service ID
-        'template_9co6phr', // template ID
-        {
-          to_email: 'shreyabalakrishna02@gmail.com',
-          from_email: form.from_email,
-          subject: form.subject,
-          message: form.message,
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        'fnFcYG7sKFLMbNaeC' // public key
-      );
-      setStatus('success');
-      setForm({ from_email: '', subject: '', message: '' });
+        body: JSON.stringify({
+          access_key: '84dd8eed-08f9-44fb-ba1c-af689a53ca0a',
+          from_name: form.from_email.split('@')[0],
+          email: form.from_email,
+          subject: `Portfolio: ${form.subject}`,
+          message: `New message from portfolio contact form:\n\nFrom: ${form.from_email}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`,
+          to_email: 'shreyabalakrishna02@gmail.com',
+          reply_to: form.from_email,
+          honeypot: false,
+          redirect: false,
+          custom_data: {
+            source: 'Portfolio Website',
+            timestamp: new Date().toISOString(),
+          }
+        }),
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        setStatus('success');
+        setForm({ from_email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
     } catch (err) {
       setStatus('error');
     } finally {
@@ -41,31 +58,19 @@ export default function ContactPanel() {
 
   return (
     <div className="flex-1 flex flex-col w-full">
-      {/* Toolbar
-      <div className="bg-gray-100 border-b border-gray-300 flex gap-4 px-4 py-2 text-xl select-none">
-        <span title="Send">📤</span>
-        <span title="Cut">✂️</span>
-        <span title="Copy">📋</span>
-        <span title="Paste">📄</span>
-        <span title="Undo">↩️</span>
-        <span title="Check">✔️</span>
-        <span title="Spelling">🔤</span>
-        <span title="Attach">📎</span>
-        <span title="Priority">❗</span>
-        <span title="Sign">🔑</span>
-      </div> */}
-      {/* Form */}
-      <form onSubmit={handleSubmit} className="flex-1 flex flex-col px-4 py-2 gap-2">
-        <div className="flex items-center gap-2">
+      
+      <form onSubmit={handleSubmit} className="flex-1 flex flex-col px-4 py-2 gap-4">
+
+        <div className="grid grid-cols-[auto,1fr] gap-x-4 gap-y-2 items-center">
+
           <span className="text-xs">To :</span>
           <input
             type="email"
             value="shreyabalakrishna02@gmail.com"
             readOnly
-            className="flex-1 border border-gray-300 px-2 py-1 text-xs bg-gray-100 rounded-sm"
+            className="border border-gray-300 px-2 py-1 text-xs bg-gray-100 rounded-sm"
           />
-        </div>
-        <div className="flex items-center gap-2">
+
           <span className="text-xs">From :</span>
           <input
             type="email"
@@ -74,10 +79,9 @@ export default function ContactPanel() {
             onChange={handleChange}
             required
             placeholder="your@email.com"
-            className="flex-1 border border-gray-300 px-2 py-1 text-xs rounded-sm"
+            className="border border-gray-300 px-2 py-1 text-xs rounded-sm"
           />
-        </div>
-        <div className="flex items-center gap-2">
+
           <span className="text-xs">Subject :</span>
           <input
             type="text"
@@ -85,9 +89,10 @@ export default function ContactPanel() {
             value={form.subject}
             onChange={handleChange}
             required
-            className="flex-1 border border-gray-300 px-2 py-1 text-xs rounded-sm"
+            className="border border-gray-300 px-2 py-1 text-xs rounded-sm"
           />
         </div>
+
         <textarea
           name="message"
           value={form.message}

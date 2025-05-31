@@ -15,7 +15,6 @@ export default function ExperienceGrid({ onSelect }) {
             className="w-16 h-16 mb-2"
           />
           <div className="text-sm font-bold text-center">{exp.company}</div>
-          <div className="text-xs text-gray-500 text-center">{exp.designation}</div>
         </div>
       ))}
     </div>

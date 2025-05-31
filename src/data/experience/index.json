@@ -2,23 +2,23 @@
   "experiences": [
     {
       "id": "exp1",
-      "company": "TechCorp Solutions",
-      "designation": "Software Engineer",
-      "dates": "Jan 2022 - Present",
+      "company": "Metropolis Healthcare",
+      "designation": "Data Science Intern",
+      "dates": "Feb 2024 - May 2024",
       "icon": "src/assets/folder.png"
     },
     {
       "id": "exp2",
-      "company": "Webify Labs",
-      "designation": "Frontend Developer",
-      "dates": "Jun 2021 - Dec 2021",
+      "company": "National University of Singapore",
+      "designation": "Deep Learning Research Extern",
+      "dates": "Jun 2023 - July 2023",
       "icon": "src/assets/folder.png"
     },
     {
       "id": "exp3",
-      "company": "DataNest Inc.",
-      "designation": "Intern",
-      "dates": "Jan 2021 - May 2021",
+      "company": "Stockone - a Shipsy Company",
+      "designation": "Data Analyst Intern",
+      "dates": "May 2023 - June 2023",
       "icon": "src/assets/folder.png"
     }
   ]

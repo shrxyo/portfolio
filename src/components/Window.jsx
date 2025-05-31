@@ -8,21 +8,37 @@ import ProjectDetail from "./ProjectDetail";
 import LandingPage from "./LandingPage";
 import { useState, useEffect } from "react";
 
-export default function WindowPage({ currentPage, navIndex, navStack, goBack, goForward, pushPage, sectionPages, onClose, onMinimize, onMaximizeRestore, windowState }) {
+export default function WindowPage({ 
+  currentPage, 
+  navIndex, 
+  navStack, 
+  goBack, 
+  goForward, 
+  pushPage, 
+  sectionPages, 
+  onClose, 
+  onMinimize, 
+  onMaximizeRestore, 
+  windowState,
+  isContactWindow = false,
+  initialPosition = null
+}) {
   const [openExpId, setOpenExpId] = useState(null);
   const [openProjectId, setOpenProjectId] = useState(null);
 
-  const defaultWidth = 700;
-  const defaultHeight = 440;
+  const defaultWidth = 1000;
+  const defaultHeight = 600;
   const defaultX = (window.innerWidth - defaultWidth) / 2;
   const defaultY = (window.innerHeight - 40 - defaultHeight) / 2; 
 
-  const [windowPosAndSize, setWindowPosAndSize] = useState({
-    x: defaultX,
-    y: defaultY,
-    width: defaultWidth,
-    height: defaultHeight,
-  });
+  const [windowPosAndSize, setWindowPosAndSize] = useState(
+    initialPosition || {
+      x: defaultX,
+      y: defaultY,
+      width: defaultWidth,
+      height: defaultHeight,
+    }
+  );
   const [lastOpenPosAndSize, setLastOpenPosAndSize] = useState(null);
 
   const handleBack = () => {
@@ -37,6 +53,10 @@ export default function WindowPage({ currentPage, navIndex, navStack, goBack, go
   };
 
   const renderContent = () => {
+    if (isContactWindow) {
+      return <ContactPanel />;
+    }
+
     if (currentPage.key.startsWith('experience-')) {
       const expId = currentPage.key.split('-')[1];
       return <ExperienceDetail expId={expId} onBack={() => {
@@ -61,8 +81,6 @@ export default function WindowPage({ currentPage, navIndex, navStack, goBack, go
         ) : (
           <ProjectsGrid onSelect={setOpenProjectId} />
         );
-      case 'contact':
-        return <ContactPanel />;
       default:
         if (sectionPages.some(s => s.key === currentPage.key)) {
           const SectionComponent = sectionPages.find(s => s.key === currentPage.key)?.component;
@@ -75,8 +93,8 @@ export default function WindowPage({ currentPage, navIndex, navStack, goBack, go
   const maximizedWidth = window.innerWidth;
   const maximizedHeight = window.innerHeight - 40; 
 
-  const handleMaximizeRestoreClick = () => {
-    if (windowState === 'open') {
+  useEffect(() => {
+    if (windowState === 'maximized') {
       setLastOpenPosAndSize(windowPosAndSize);
       setWindowPosAndSize({
         x: 0,
@@ -84,78 +102,96 @@ export default function WindowPage({ currentPage, navIndex, navStack, goBack, go
         width: maximizedWidth,
         height: maximizedHeight,
       });
-      onMaximizeRestore(); 
-    } else if (windowState === 'maximized') {
-      if (lastOpenPosAndSize) {
-        setWindowPosAndSize(lastOpenPosAndSize);
-      } else {
-        setWindowPosAndSize({
-          x: defaultX,
-          y: defaultY,
-          width: defaultWidth,
-          height: defaultHeight,
-        });
-      }
-      onMaximizeRestore(); 
+    } else if (windowState === 'open' && lastOpenPosAndSize) {
+      setWindowPosAndSize(lastOpenPosAndSize);
+    }
+  }, [windowState]);
+
+  const handleResize = (e, direction, ref, delta, position) => {
+    const newWidth = parseInt(ref.style.width);
+    const newHeight = parseInt(ref.style.height);
+    
+    if (windowState === 'maximized') {
+      onMaximizeRestore();
+      const newX = position.x;
+      const newY = position.y;
+      const newPosAndSize = {
+        x: newX,
+        y: newY,
+        width: newWidth,
+        height: newHeight,
+      };
+      setWindowPosAndSize(newPosAndSize);
+      setLastOpenPosAndSize(newPosAndSize);
+    } else {
+      const newPosAndSize = {
+        width: newWidth,
+        height: newHeight,
+        ...position,
+      };
+      setWindowPosAndSize(newPosAndSize);
+      setLastOpenPosAndSize(newPosAndSize);
     }
   };
-
-   const handleMinimizeClick = () => {
-     setLastOpenPosAndSize(windowPosAndSize);
-     onMinimize(); 
-   };
-
-  useEffect(() => {
-    if (windowState === 'open' && lastOpenPosAndSize) {
-      setWindowPosAndSize(lastOpenPosAndSize);
-      setLastOpenPosAndSize(null); 
-    }
-  }, [windowState, lastOpenPosAndSize]);
 
   const windowTitle = currentPage?.label || 'Shreya Balakrishna'; 
 
   return (
     <Rnd
       className="z-10"
-      size={{ width: windowPosAndSize.width, height: windowPosAndSize.height }}
-      position={{ x: windowPosAndSize.x, y: windowPosAndSize.y }}
+      size={{ 
+        width: windowState === 'maximized' ? maximizedWidth : windowPosAndSize.width, 
+        height: windowState === 'maximized' ? maximizedHeight : windowPosAndSize.height 
+      }}
+      position={{ 
+        x: windowState === 'maximized' ? 0 : windowPosAndSize.x, 
+        y: windowState === 'maximized' ? 0 : windowPosAndSize.y 
+      }}
       onDragStop={(e, d) => {
-        setWindowPosAndSize(prev => ({ ...prev, x: d.x, y: d.y }));
+        if (windowState !== 'maximized') {
+          setWindowPosAndSize(prev => ({ ...prev, x: d.x, y: d.y }));
+        }
       }}
-      onResizeStop={(e, direction, ref, delta, position) => {
-        setWindowPosAndSize({
-          width: ref.style.width,
-          height: ref.style.height,
-          ...position,
-        });
-      }}
+      onResizeStop={handleResize}
       minWidth={500}
       minHeight={350}
       bounds="window"
       dragHandleClassName={windowState === 'maximized' ? null : 'drag-handle'} 
-      enableResizing={true} 
+      enableResizing={true}
+      disableDragging={windowState === 'maximized'}
     >
       <div className="rounded-sm border-[3px] border-blue-700 bg-white shadow-xl overflow-hidden flex flex-col h-full cursor-default">
         {/* Title Bar */}
-        <div className={`text-white text-sm font-semibold px-4 py-1 flex justify-between items-center ${windowState === 'maximized' ? '' : 'drag-handle'} select-none cursor-default ${currentPage.key === 'contact' ? 'bg-blue-700' : 'bg-blue-700'}`}>
-          <span>{windowTitle}</span>
+        <div className={`text-white text-sm font-semibold px-4 py-1 flex justify-between items-center ${windowState === 'maximized' ? '' : 'drag-handle'} select-none cursor-default ${isContactWindow ? 'bg-blue-700' : 'bg-blue-700'}`}>
+          <span>{currentPage?.label || 'Window'}</span>
           <div className="text-xs flex gap-1">
-            <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={handleMinimizeClick}>_</span>
-            <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={handleMaximizeRestoreClick}>□</span>
+            <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onMinimize}>_</span>
+            <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onMaximizeRestore}>□</span>
             <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onClose}>✕</span>
           </div>
         </div>
+        
         {/* Menu Bar */}
         <div className="bg-gray-200 text-sm text-[13px] px-4 py-1 border-b border-gray-300 flex items-center justify-between">
-          <span>File &nbsp; Edit &nbsp; Place &nbsp; Holder</span>
+          <div className="flex gap-1">
+            <span className="px-2 py-1 cursor-pointer hover:bg-gray-300 active:bg-gray-400" onClick={() => {}}>File</span>
+            <span className="px-2 py-1 cursor-pointer hover:bg-gray-300 active:bg-gray-400" onClick={() => {}}>Edit</span>
+            <span className="px-2 py-1 cursor-pointer hover:bg-gray-300 active:bg-gray-400" onClick={() => {}}>View</span>
+            <span className="px-2 py-1 cursor-pointer hover:bg-gray-300 active:bg-gray-400" onClick={() => {}}>Tools</span>
+          </div>
           <div className="ml-auto flex gap-2">
-            <button onClick={handleBack} disabled={navIndex === 0 && !openProjectId} className="px-2 py-1 border rounded disabled:opacity-50 ml-2">&#8592; Back</button>
-            <button onClick={goForward} disabled={navIndex === navStack.length - 1 || navIndex === 0} className="px-2 py-1 border rounded disabled:opacity-50">Forward &#8594;</button>
+            {!isContactWindow && (
+              <>
+                <button onClick={handleBack} disabled={navIndex === 0 && !openProjectId} className="px-2 py-1 border rounded disabled:opacity-50 ml-2 cursor-pointer">&#8592; Back</button>
+                <button onClick={goForward} disabled={navIndex === navStack.length - 1 || navIndex === 0} className="px-2 py-1 border rounded disabled:opacity-50 cursor-pointer">Forward &#8594;</button>
+              </>
+            )}
           </div>
         </div>
+
         {/* Content */}
-        <div className={`flex-1 flex flex-col ${
-          ['folders', 'experience', 'projects'].includes(currentPage.key) 
+        <div className={`flex-1 flex flex-col cursor-default ${
+          !isContactWindow && ['folders', 'experience', 'projects'].includes(currentPage.key) 
             ? 'items-start justify-start' 
             : 'items-center justify-center'
         } bg-white p-8 w-full overflow-auto min-h-0`}>
