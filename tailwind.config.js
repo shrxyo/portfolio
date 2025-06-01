@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'media', 
   theme: {
     extend: {
       fontFamily: {

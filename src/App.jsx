@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css'
@@ -10,6 +10,25 @@ import ContactPanel from "./components/ContactPanel";
 import wallpaper from "./assets/wallpaper.jpg";
 import AboutMePage from "./components/AboutMePage";
 import SkillsPage from "./components/SkillsPage";
+
+import exp1Data from './data/experience/exp1.json';
+import exp2Data from './data/experience/exp2.json';
+import exp3Data from './data/experience/exp3.json';
+import project1Data from './data/projects/project1.json';
+import project2Data from './data/projects/project2.json';
+import project3Data from './data/projects/project3.json';
+
+const experienceData = {
+  'experience-exp1': exp1Data,
+  'experience-exp2': exp2Data,
+  'experience-exp3': exp3Data,
+};
+
+const projectsData = {
+  'projects-project1': project1Data,
+  'projects-project2': project2Data,
+  'projects-project3': project3Data,
+};
 
 const sectionPages = [
   { key: 'about', label: 'About Me', component: AboutMePage },
@@ -37,7 +56,16 @@ export default function App() {
   const currentPageKey = navStack[navIndex];
   const currentPage = currentPageKey.startsWith('experience-') 
     ? { key: currentPageKey, label: 'Experience' }
+    : currentPageKey.startsWith('projects-')
+    ? { key: currentPageKey, label: 'Projects' }
     : allPages.find(p => p.key === currentPageKey);
+
+  // Get data for the current page if it's a detail page
+  const currentPageData = currentPageKey.startsWith('experience-')
+    ? experienceData[currentPageKey]
+    : currentPageKey.startsWith('projects-')
+    ? projectsData[currentPageKey]
+    : null;
 
   const pushPage = (key) => {
     const newStack = navStack.slice(0, navIndex + 1);
@@ -135,6 +163,7 @@ export default function App() {
           onMinimize={() => handleWindowAction('portfolio', 'minimized')}
           onMaximizeRestore={() => handleWindowAction('portfolio', windows.portfolio.state === 'maximized' ? 'open' : 'maximized')}
           windowState={windows.portfolio.state}
+          pageData={currentPageData}
         />
       )}
 
@@ -154,6 +183,7 @@ export default function App() {
           windowState={windows.contact.state}
           isContactWindow={true}
           initialPosition={windows.contact.position}
+          pageData={null}
         />
       )}
 

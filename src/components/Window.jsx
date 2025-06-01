@@ -7,6 +7,7 @@ import ProjectsGrid from "./ProjectsGrid";
 import ProjectDetail from "./ProjectDetail";
 import LandingPage from "./LandingPage";
 import { useState, useEffect } from "react";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 export default function WindowPage({ 
   currentPage, 
@@ -21,15 +22,17 @@ export default function WindowPage({
   onMaximizeRestore, 
   windowState,
   isContactWindow = false,
-  initialPosition = null
+  initialPosition = null,
+  pageData
 }) {
+  const isMobile = useIsMobile();
   const [openExpId, setOpenExpId] = useState(null);
   const [openProjectId, setOpenProjectId] = useState(null);
 
-  const defaultWidth = 1000;
-  const defaultHeight = 600;
-  const defaultX = (window.innerWidth - defaultWidth) / 2;
-  const defaultY = (window.innerHeight - 40 - defaultHeight) / 2; 
+  const defaultWidth = isMobile ? window.innerWidth : 1000;
+  const defaultHeight = isMobile ? window.innerHeight - 40 : 600;
+  const defaultX = isMobile ? 0 : (window.innerWidth - defaultWidth) / 2;
+  const defaultY = isMobile ? 0 : (window.innerHeight - 40 - defaultHeight) / 2; 
 
   const [windowPosAndSize, setWindowPosAndSize] = useState(
     initialPosition || {
@@ -44,12 +47,18 @@ export default function WindowPage({
   const handleBack = () => {
     if (openProjectId) {
       setOpenProjectId(null);
+      goBack();
     } else if (openExpId) {
       setOpenExpId(null);
       goBack();
     } else {
       goBack();
     }
+  };
+
+  const handleProjectSelect = (projectId) => {
+    setOpenProjectId(projectId);
+    pushPage(`projects-${projectId}`);
   };
 
   const renderContent = () => {
@@ -59,10 +68,15 @@ export default function WindowPage({
 
     if (currentPage.key.startsWith('experience-')) {
       const expId = currentPage.key.split('-')[1];
-      return <ExperienceDetail expId={expId} onBack={() => {
+      return <ExperienceDetail expId={expId} data={pageData} onBack={() => {
         setOpenExpId(null);
         goBack();
       }} />;
+    }
+
+    if (currentPage.key.startsWith('projects-')) {
+      const projectId = currentPage.key.split('-')[1];
+      return <ProjectDetail projectId={projectId} data={pageData} onBack={handleBack} />;
     }
 
     switch (currentPage.key) {
@@ -76,11 +90,7 @@ export default function WindowPage({
           setOpenExpId(id);
         }} />;
       case 'projects':
-        return openProjectId ? (
-          <ProjectDetail projectId={openProjectId} onBack={handleBack} />
-        ) : (
-          <ProjectsGrid onSelect={setOpenProjectId} />
-        );
+        return <ProjectsGrid onSelect={handleProjectSelect} />;
       default:
         if (sectionPages.some(s => s.key === currentPage.key)) {
           const SectionComponent = sectionPages.find(s => s.key === currentPage.key)?.component;
@@ -94,7 +104,16 @@ export default function WindowPage({
   const maximizedHeight = window.innerHeight - 40; 
 
   useEffect(() => {
-    if (windowState === 'maximized') {
+    if (isMobile) {
+      // On mobile, always maximize the window
+      setLastOpenPosAndSize(windowPosAndSize);
+      setWindowPosAndSize({
+        x: 0,
+        y: 0,
+        width: window.innerWidth,
+        height: window.innerHeight - 40,
+      });
+    } else if (windowState === 'maximized') {
       setLastOpenPosAndSize(windowPosAndSize);
       setWindowPosAndSize({
         x: 0,
@@ -105,7 +124,7 @@ export default function WindowPage({
     } else if (windowState === 'open' && lastOpenPosAndSize) {
       setWindowPosAndSize(lastOpenPosAndSize);
     }
-  }, [windowState]);
+  }, [windowState, isMobile]);
 
   const handleResize = (e, direction, ref, delta, position) => {
     const newWidth = parseInt(ref.style.width);
@@ -140,33 +159,37 @@ export default function WindowPage({
     <Rnd
       className="z-10"
       size={{ 
-        width: windowState === 'maximized' ? maximizedWidth : windowPosAndSize.width, 
-        height: windowState === 'maximized' ? maximizedHeight : windowPosAndSize.height 
+        width: isMobile ? window.innerWidth : (windowState === 'maximized' ? maximizedWidth : windowPosAndSize.width), 
+        height: isMobile ? window.innerHeight - 40 : (windowState === 'maximized' ? maximizedHeight : windowPosAndSize.height) 
       }}
       position={{ 
-        x: windowState === 'maximized' ? 0 : windowPosAndSize.x, 
-        y: windowState === 'maximized' ? 0 : windowPosAndSize.y 
+        x: isMobile ? 0 : (windowState === 'maximized' ? 0 : windowPosAndSize.x), 
+        y: isMobile ? 0 : (windowState === 'maximized' ? 0 : windowPosAndSize.y) 
       }}
       onDragStop={(e, d) => {
-        if (windowState !== 'maximized') {
+        if (!isMobile && windowState !== 'maximized') {
           setWindowPosAndSize(prev => ({ ...prev, x: d.x, y: d.y }));
         }
       }}
       onResizeStop={handleResize}
-      minWidth={500}
-      minHeight={350}
+      minWidth={isMobile ? window.innerWidth : 500}
+      minHeight={isMobile ? window.innerHeight - 40 : 350}
       bounds="window"
-      dragHandleClassName={windowState === 'maximized' ? null : 'drag-handle'} 
-      enableResizing={true}
-      disableDragging={windowState === 'maximized'}
+      dragHandleClassName={isMobile ? null : (windowState === 'maximized' ? null : 'drag-handle')} 
+      enableResizing={!isMobile}
+      disableDragging={isMobile || windowState === 'maximized'}
     >
       <div className="rounded-sm border-[3px] border-blue-700 bg-white shadow-xl overflow-hidden flex flex-col h-full cursor-default">
         {/* Title Bar */}
-        <div className={`text-white text-sm font-semibold px-4 py-1 flex justify-between items-center ${windowState === 'maximized' ? '' : 'drag-handle'} select-none cursor-default ${isContactWindow ? 'bg-blue-700' : 'bg-blue-700'}`}>
+        <div className={`text-white text-sm font-semibold px-4 py-1 flex justify-between items-center ${!isMobile && windowState === 'maximized' ? '' : 'drag-handle'} select-none cursor-default ${isContactWindow ? 'bg-blue-700' : 'bg-blue-700'}`}>
           <span>{currentPage?.label || 'Window'}</span>
           <div className="text-xs flex gap-1">
-            <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onMinimize}>_</span>
-            <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onMaximizeRestore}>□</span>
+            {!isMobile && (
+              <>
+                <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onMinimize}>_</span>
+                <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onMaximizeRestore}>□</span>
+              </>
+            )}
             <span className="cursor-pointer hover:bg-blue-800 px-1 rounded" onClick={onClose}>✕</span>
           </div>
         </div>
@@ -182,8 +205,20 @@ export default function WindowPage({
           <div className="ml-auto flex gap-2">
             {!isContactWindow && (
               <>
-                <button onClick={handleBack} disabled={navIndex === 0 && !openProjectId} className="px-2 py-1 border rounded disabled:opacity-50 ml-2 cursor-pointer">&#8592; Back</button>
-                <button onClick={goForward} disabled={navIndex === navStack.length - 1 || navIndex === 0} className="px-2 py-1 border rounded disabled:opacity-50 cursor-pointer">Forward &#8594;</button>
+                <button 
+                  onClick={handleBack} 
+                  disabled={navIndex === 0 && !openProjectId} 
+                  className={`px-2 py-1 border rounded disabled:opacity-50 ml-2 cursor-pointer ${isMobile ? 'text-lg' : ''}`}
+                >
+                  {isMobile ? '←' : '← Back'}
+                </button>
+                <button 
+                  onClick={goForward} 
+                  disabled={navIndex === navStack.length - 1 || navIndex === 0} 
+                  className={`px-2 py-1 border rounded disabled:opacity-50 cursor-pointer ${isMobile ? 'text-lg' : ''}`}
+                >
+                  {isMobile ? '→' : 'Forward →'}
+                </button>
               </>
             )}
           </div>
@@ -194,7 +229,7 @@ export default function WindowPage({
           !isContactWindow && ['folders', 'experience', 'projects'].includes(currentPage.key) 
             ? 'items-start justify-start' 
             : 'items-center justify-center'
-        } bg-white p-8 w-full overflow-auto min-h-0`}>
+        } bg-white p-4 sm:p-8 w-full overflow-auto min-h-0`}>
           {renderContent()}
         </div>
       </div>

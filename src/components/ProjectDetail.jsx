@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function ProjectDetail({ projectId, onBack }) {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    import(`../data/projects/${projectId}.json`).then(mod => setData(mod.default));
-  }, [projectId]);
-
+export default function ProjectDetail({ projectId, onBack, data }) {
   if (!data) return <div className="text-center mt-8">Loading...</div>;
 
   return (

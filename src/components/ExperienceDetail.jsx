@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function ExperienceDetail({ expId, onBack }) {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    import(`../data/experience/${expId}.json`).then(mod => setData(mod.default));
-  }, [expId]);
-
+export default function ExperienceDetail({ expId, onBack, data }) {
   if (!data) return <div className="text-center mt-8">Loading...</div>;
 
   return (

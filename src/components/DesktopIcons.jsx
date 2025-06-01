@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import resumeIcon from '../assets/resume.png';
 import folderIcon from '../assets/folder.png';
 import contactIcon from '../assets/folder.png'; 
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const icons = [
   {
@@ -25,6 +26,7 @@ const icons = [
 ];
 
 export default function DesktopIcons({ onPortfolioClick, onContactClick, selectedIconIndex, setSelectedIconIndex }) {
+  const isMobile = useIsMobile();
 
   const handleIconClick = (icon, index) => {
     setSelectedIconIndex(index);
@@ -39,18 +41,19 @@ export default function DesktopIcons({ onPortfolioClick, onContactClick, selecte
   };
 
   return (
-    <div className="absolute top-4 left-4 flex flex-col gap-6">
+    <div className={`absolute ${isMobile ? 'top-2 left-2 gap-4' : 'top-4 left-4 gap-6'} flex flex-col`}>
       {icons.map((icon, index) => (
         <div
           key={index}
           onClick={() => handleIconClick(icon, index)}
-          className="flex flex-col items-center w-20 cursor-pointer group"
+          className="flex flex-col items-center cursor-pointer group"
+          style={{ width: isMobile ? '64px' : '80px' }}
           data-desktop-icon={true}
         >
           <img
             src={icon.icon}
             alt={icon.label}
-            className="w-12 h-12 mb-1"
+            className={`${isMobile ? 'w-10 h-10' : 'w-12 h-12'} mb-1`}
           />
           <p className={`text-sm text-white text-center px-1 [text-shadow:_1px_1px_2px_rgba(0,0,0,0.9)] ${
             selectedIconIndex === index ? 'bg-blue-700' : ''
