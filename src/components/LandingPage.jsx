@@ -16,21 +16,22 @@ export default function LandingPage({ onSelect }) {
       <div className="text-lg sm:text-xl text-gray-600 mb-6 text-center">Developer | NLP | Designer</div>
       <div className="mb-8 text-center text-base text-gray-700 font-mono">Welcome to my portfolio. Explore the sections below!</div>
       <div
-        className={`grid gap-4 w-full max-w-xs mx-auto place-items-center sm:flex sm:flex-wrap sm:gap-6 sm:items-center sm:justify-center sm:max-w-2xl`}
+        className={`grid grid-cols-2 gap-x-4 gap-y-6 w-full max-w-sm mx-auto place-items-center py-4
+        sm:flex sm:flex-wrap sm:gap-6 sm:items-center sm:justify-center sm:max-w-2xl`}
       >
         {tabs.map(tab => (
           <div
             key={tab.key}
             onClick={() => onSelect(tab.key)}
-            className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-3 rounded transition"
-            style={{ width: isMobile ? '80px' : '128px' }}
+            className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded transition"
+            style={{ width: isMobile ? '90px' : '128px' }}
           >
             <img
               src={tab.icon}
               alt={tab.label}
-              className={`${isMobile ? 'w-12 h-12' : 'w-16 h-16'}`}
+              className={`${isMobile ? 'w-14 h-14' : 'w-16 h-16'}`}
             />
-            <p className="text-sm font-medium mt-2 text-center ">{tab.label}</p>
+            <p className="text-base font-medium mt-2 text-center">{tab.label}</p>
           </div>
         ))}
       </div>
