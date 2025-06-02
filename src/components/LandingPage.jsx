@@ -1,11 +1,15 @@
 import React from 'react';
 import { useIsMobile } from '../hooks/useIsMobile';
+import aboutIcon from '../assets/about.png';
+import experienceIcon from '../assets/folder.png';
+import projectsIcon from '../assets/folder.png';
+import skillsIcon from '../assets/skills.png';
 
 const tabs = [
-  { label: "About Me", key: "about", icon: "src/assets/about.png" },
-  { label: "Experience", key: "experience", icon: "src/assets/folder.png" },
-  { label: "Projects", key: "projects", icon: "src/assets/folder.png" },
-  { label: "Skills", key: "skills", icon: "src/assets/skills.png" },
+  { label: "About Me", key: "about", icon: aboutIcon },
+  { label: "Experience", key: "experience", icon: experienceIcon },
+  { label: "Projects", key: "projects", icon: projectsIcon },
+  { label: "Skills", key: "skills", icon: skillsIcon },
 ];
 
 export default function LandingPage({ onSelect }) {
@@ -35,6 +39,7 @@ export default function LandingPage({ onSelect }) {
           </div>
         ))}
       </div>
+      <img src={aboutIcon} alt="test" />
     </div>
   );
 } 

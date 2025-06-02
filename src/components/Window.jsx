@@ -8,6 +8,8 @@ import ProjectDetail from "./ProjectDetail";
 import LandingPage from "./LandingPage";
 import { useState, useEffect } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
+import BackIcon from '../assets/Back.png';
+import ForwardIcon from '../assets/Forward.png';
 
 export default function WindowPage({ 
   currentPage, 
@@ -207,16 +209,24 @@ export default function WindowPage({
                 <button 
                   onClick={handleBack} 
                   disabled={navIndex === 0 && !openProjectId} 
-                  className={`px-2 py-1 border rounded disabled:opacity-50 ml-2 cursor-pointer ${isMobile ? 'text-lg' : ''}`}
+                  className={`px-2 py-1 border rounded disabled:opacity-50 ml-2 cursor-pointer ${isMobile ? '' : ''}`}
                 >
-                  {isMobile ? '←' : '← Back'}
+                  {isMobile ? (
+                    <img src={BackIcon} alt="Back" className="w-6 h-6" />
+                  ) : (
+                    '← Back'
+                  )}
                 </button>
                 <button 
                   onClick={goForward} 
                   disabled={navIndex === navStack.length - 1 || navIndex === 0} 
-                  className={`px-2 py-1 border rounded disabled:opacity-50 cursor-pointer ${isMobile ? 'text-lg' : ''}`}
+                  className={`px-2 py-1 border rounded disabled:opacity-50 cursor-pointer ${isMobile ? '' : ''}`}
                 >
-                  {isMobile ? '→' : 'Forward →'}
+                  {isMobile ? (
+                    <img src={ForwardIcon} alt="Forward" className="w-6 h-6" />
+                  ) : (
+                    'Forward →'
+                  )}
                 </button>
               </>
             )}
