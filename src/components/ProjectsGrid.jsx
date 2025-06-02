@@ -1,4 +1,5 @@
 import projectsData from '../data/projects/index.json';
+import folderIcon from '../assets/folder.png';
 
 export default function ProjectsGrid({ onSelect }) {
   return (
@@ -10,7 +11,7 @@ export default function ProjectsGrid({ onSelect }) {
           className="flex flex-col items-center cursor-pointer hover:bg-gray-100 rounded transition w-32"
         >
           <img
-            src={project.icon}
+            src={folderIcon}
             alt={project.title}
             className="w-16 h-16 mb-2"
           />

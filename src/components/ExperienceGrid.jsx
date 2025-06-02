@@ -1,4 +1,5 @@
 import experiencesData from '../data/experience/index.json';
+import folderIcon from '../assets/folder.png';
 
 export default function ExperienceGrid({ onSelect }) {
   return (
@@ -10,7 +11,7 @@ export default function ExperienceGrid({ onSelect }) {
           className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-3 rounded transition w-32"
         >
           <img
-            src={exp.icon}
+            src={folderIcon}
             alt={exp.company}
             className="w-16 h-16 mb-2"
           />

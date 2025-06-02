@@ -39,7 +39,6 @@ export default function LandingPage({ onSelect }) {
           </div>
         ))}
       </div>
-      <img src={aboutIcon} alt="test" />
     </div>
   );
 } 
