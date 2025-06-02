@@ -17,6 +17,7 @@ import exp3Data from './data/experience/exp3.json';
 import project1Data from './data/projects/project1.json';
 import project2Data from './data/projects/project2.json';
 import project3Data from './data/projects/project3.json';
+import project4Data from './data/projects/project4.json';
 
 const experienceData = {
   'experience-exp1': exp1Data,
@@ -28,6 +29,7 @@ const projectsData = {
   'projects-project1': project1Data,
   'projects-project2': project2Data,
   'projects-project3': project3Data,
+  'projects-project4': project4Data,
 };
 
 const sectionPages = [
@@ -60,7 +62,6 @@ export default function App() {
     ? { key: currentPageKey, label: 'Projects' }
     : allPages.find(p => p.key === currentPageKey);
 
-  // Get data for the current page if it's a detail page
   const currentPageData = currentPageKey.startsWith('experience-')
     ? experienceData[currentPageKey]
     : currentPageKey.startsWith('projects-')

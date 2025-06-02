@@ -5,10 +5,9 @@ export default function ExperienceDetail({ expId, onBack, data }) {
 
   return (
     <div className="w-full h-full overflow-y-auto">
-      <div className="max-w-2xl mx-auto ">
-        <div className="text-2xl font-bold ">{data.mainHeading}</div>
+      <div className="max-w-4xl mx-auto p-4">
+        <div className="text-2xl font-bold mb-2">{data.mainHeading}</div>
         <div className="text-lg font-semibold mb-4 flex items-center gap-2">
-
           {data.dates}
         </div>
         <div className="flex gap-6 mb-6 flex-wrap">
@@ -20,11 +19,11 @@ export default function ExperienceDetail({ expId, onBack, data }) {
           ))}
         </div>
         <div className="mb-4">
-          <div className="font-semibold mb-1">Context</div>
+          <div className="font-bold mb-1 underline">Context:</div>
           <div className="text-sm">{data.context}</div>
         </div>
-        <div>
-          <div className="font-semibold mb-1">Objectives</div>
+        <div className="mb-4">
+          <div className="font-bold mb-1 underline">Objectives:</div>
           <ul className="list-disc ml-6 text-sm">
             {data.objectives.map((obj, i) => (
               <li key={i}>{obj}</li>

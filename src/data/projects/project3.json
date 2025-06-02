@@ -1,6 +1,6 @@
 {
-  "mainHeading": "Task Management App",
-  "dates": "2023",
+  "mainHeading": "SomniSage: Sleep Stage Scoring and personalized intervention system.",
+  "dates": "January 2024 - May 2024",
   "technologies": [
     {
       "name": "React",
@@ -35,6 +35,5 @@
     "User roles and permissions",
     "Activity timeline and task history"
   ],
-  "githubLink": "https://github.com/yourusername/task-management-app",
   "liveLink": "https://your-task-app-url.com"
 } 

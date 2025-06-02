@@ -4,7 +4,7 @@ const tabs = [
     { label: "About Me", key: "about", icon: "src/assets/about.png" },
     { label: "Experience", key: "experience", icon: "src/assets/folder.png" },
     { label: "Projects", key: "projects", icon: "src/assets/folder.png" },
-    { label: "Skills", key: "skills", icon: "src/assets/folder.png" },
+    { label: "Skills", key: "skills", icon: "src/assets/skills.png" },
   ];
   
   export default function FolderGrid({ setActiveTab }) {

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import resumeIcon from '../assets/resume.png';
-import folderIcon from '../assets/folder.png';
-import contactIcon from '../assets/folder.png'; 
+import menuIcon from '../assets/Menu.png';
+import peopleIcon from '../assets/People.png'; 
 import { useIsMobile } from '../hooks/useIsMobile';
 
 const icons = [
@@ -12,17 +12,19 @@ const icons = [
     type: "link"
   },
   {
-    label: "Portfolio",
-    icon: folderIcon,
+    label: "Shreya's Portfolio",
+    icon: menuIcon,
     onClick: null,
     type: "window"
   },
   {
-    label: "Contact",
-    icon: contactIcon,
+    label: "Contact Me",
+    icon: peopleIcon,
     onClick: null,
     type: "contact"
   }
+
+  
 ];
 
 export default function DesktopIcons({ onPortfolioClick, onContactClick, selectedIconIndex, setSelectedIconIndex }) {

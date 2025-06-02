@@ -1,0 +1,40 @@
+{
+    "mainHeading": "Leveraging Sentimental Analysis on Annual Reports of Publicly Listed Companies.",
+    "dates": "October 2022 - January 2023",
+    "technologies": [
+      {
+        "name": "React",
+        "icon": "src/assets/folder.png"
+      },
+      {
+        "name": "Firebase",
+        "icon": "src/assets/folder.png"
+      },
+      {
+        "name": "Material-UI",
+        "icon": "src/assets/folder.png"
+      },
+      {
+        "name": "Redux",
+        "icon": "src/assets/folder.png"
+      }
+    ],
+    "context": "A collaborative task management application that helps teams organize, track, and manage their work efficiently with real-time updates and intuitive features.",
+    "objectives": [
+      "Develop a real-time collaborative task management system",
+      "Create an intuitive and user-friendly interface",
+      "Implement team collaboration features",
+      "Ensure data persistence and synchronization",
+      "Build robust task organization and filtering capabilities"
+    ],
+    "features": [
+      "Real-time task updates and notifications",
+      "Team collaboration and task assignment",
+      "Task categorization and priority levels",
+      "Progress tracking and deadline management",
+      "User roles and permissions",
+      "Activity timeline and task history"
+    ],
+    "githubLink": "https://colab.research.google.com/drive/1Z2W2m2aUqAylvIKR7V0zrp5N7R6Kut3g?usp=sharing",
+    "liveLink": "https://your-task-app-url.com"
+  } 

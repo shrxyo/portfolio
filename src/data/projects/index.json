@@ -4,22 +4,25 @@
       "id": "project1",
       "title": "Emotional Intelligence Assistant",
       "icon": "src/assets/folder.png",
-      "shortDescription": "A Windows XP themed portfolio website",
       "dates": "May 2025"
     },
     {
       "id": "project2",
       "title": "Text augmentation using LLMs",
       "icon": "src/assets/folder.png",
-      "shortDescription": "Full-stack e-commerce solution",
       "dates": "September 2024"
     },
     {
       "id": "project3",
       "title": "SomniSage",
       "icon": "src/assets/folder.png",
-      "shortDescription": "Collaborative task management application",
       "dates": "January 2024"
+    },
+    {
+      "id": "project4",
+      "title": "Sentimental Analysis on Annual Reports",
+      "icon": "src/assets/folder.png",
+      "dates": "October 2022"
     }
   ]
 } 

@@ -1,8 +1,8 @@
 {
-  "company": "Webify Labs",
-  "designation": "Frontend Developer",
-  "dates": "Jun 2021 - Dec 2021",
-  "mainHeading": "Webify Labs - Frontend Developer",
+  "company": "National University of Singapore",
+  "designation": "Deep Learning Research Extern",
+  "dates": "Jun 2023 - July 2023",
+  "mainHeading": "National University of Singapore - Deep Learning Research Extern",
   "technologies": [
     { "name": "Vue.js", "icon": "assets/vue.svg" },
     { "name": "Sass", "icon": "assets/sass.svg" },

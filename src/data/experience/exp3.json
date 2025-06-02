@@ -1,8 +1,8 @@
 {
-  "company": "DataNest Inc.",
-  "designation": "Intern",
-  "dates": "Jan 2021 - May 2021",
-  "mainHeading": "DataNest Inc. - Intern",
+  "company": "Stockone: A Shipsy Company",
+  "designation": "Data Analyst Intern",
+  "dates": "May 2023 - June 2023",
+  "mainHeading": "Stockone: A Shipsy Company - Data Analyst Intern",
   "technologies": [
     { "name": "Python", "icon": "assets/python.svg" },
     { "name": "Pandas", "icon": "assets/pandas.svg" },

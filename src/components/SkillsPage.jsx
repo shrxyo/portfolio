@@ -8,7 +8,6 @@ export default function SkillsPage() {
       "HTML/CSS",
       "Tailwind CSS",
       "TypeScript",
-      // Add 5 placeholder technical skills
       "Placeholder Tech Skill 1",
       "Placeholder Tech Skill 2",
       "Placeholder Tech Skill 3",

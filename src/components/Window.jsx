@@ -81,7 +81,7 @@ export default function WindowPage({
 
     switch (currentPage.key) {
       case 'description':
-        return <LandingPage onMenuClick={() => pushPage('folders')} />;
+        return <LandingPage onSelect={pushPage} />;
       case 'folders':
         return <FolderGrid setActiveTab={pushPage} />;
       case 'experience':
@@ -105,7 +105,6 @@ export default function WindowPage({
 
   useEffect(() => {
     if (isMobile) {
-      // On mobile, always maximize the window
       setLastOpenPosAndSize(windowPosAndSize);
       setWindowPosAndSize({
         x: 0,
