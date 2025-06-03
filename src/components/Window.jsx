@@ -173,8 +173,8 @@ export default function WindowPage({
         }
       }}
       onResizeStop={handleResize}
-      minWidth={isMobile ? window.innerWidth : 500}
-      minHeight={isMobile ? window.innerHeight - 40 : 350}
+      minWidth={isMobile ? window.innerWidth : 700}
+      minHeight={isMobile ? window.innerHeight - 40 : 500}
       bounds="window"
       dragHandleClassName={isMobile ? null : (windowState === 'maximized' ? null : 'drag-handle')} 
       enableResizing={!isMobile}

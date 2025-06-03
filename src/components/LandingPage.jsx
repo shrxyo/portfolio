@@ -15,10 +15,10 @@ const tabs = [
 export default function LandingPage({ onSelect }) {
   const isMobile = useIsMobile();
   return (
-    <div className="bg-white w-full h-full flex flex-col items-center justify-center cursor-default p-4">
-      <div className="text-4xl sm:text-5xl font-bold text-gray-800 mb-2 text-center">Hey, I'm Shreya!</div>
+    <div className="bg-white w-full h-full flex flex-col cursor-default p-4">
+      <div className="text-4xl sm:text-5xl font-bold text-gray-800 mb-3 text-center mt-8">Hey, I'm Shreya!</div>
       <div className="text-lg sm:text-xl text-gray-600 mb-6 text-center">Developer | NLP | Designer</div>
-      <div className="mb-8 text-center text-base text-gray-700 font-mono">Welcome to my portfolio. Explore the sections below!</div>
+      <div className="text-lg sm:text-xl text-gray-600 mb-8 text-center">Welcome to my portfolio. Explore the sections below!</div>
       <div
         className={`grid grid-cols-2 gap-x-4 gap-y-6 w-full max-w-sm mx-auto place-items-center py-4
         sm:flex sm:flex-wrap sm:gap-6 sm:items-center sm:justify-center sm:max-w-2xl`}
