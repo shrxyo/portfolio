@@ -3,32 +3,40 @@
   "dates": "January 2025 - May 2025",
   "technologies": [
     {
-      "name": "React",
+      "name": "Python",
       "icon": "src/assets/folder.png"
     },
     {
-      "name": "Tailwind CSS",
+      "name": "HF Transformers",
       "icon": "src/assets/folder.png"
     },
     {
-      "name": "Vite",
+      "name": "OpenAI API",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "name": "LLaMA 3.2",
+      "icon": "src/assets/folder.png"
+    },
+    {
+      "name": "ChromaDB",
       "icon": "src/assets/folder.png"
     }
   ],
-  "context": "A personal portfolio website designed with a Windows XP theme, featuring a nostalgic user interface while maintaining modern web development practices.",
+  "context": "A research-based multi-turn therapy assistant built using a hybrid generation pipeline that combined Retrieval-Augmented Generation (RAG) and Cache-Augmented Generation (CAG) to enhance emotional intelligence and memory retention in chatbot conversations.",
   "objectives": [
-    "Create an interactive and engaging user experience",
-    "Implement a Windows XP-inspired design system",
-    "Showcase projects and experience in an organized manner",
-    "Ensure responsive design across different devices",
-    "Optimize performance and loading times"
+    "Built a chatbot capable of emotionally supportive, therapy-style dialogue",
+    "Integrated RAG to retrieve past session summaries using ChromaDB",
+    "Injected pre-validated therapeutic knowledge into context using CAG",
+    "Compared open-source and API-based models under the same memory framework",
+    "Evaluated models using semantic similarity and human-rated empathy scores"
   ],
   "features": [
-    "Custom cursor implementation",
-    "Draggable windows with resize functionality",
-    "Windows XP-style contact form",
-    "Interactive folder navigation",
-    "Responsive design with modern CSS"
+    "Hybrid memory pipeline with both RAG and CAG integration",
+    "Fine-tuned GPT-4o-mini on a multi-turn mental therapy dataset",
+    "Implemented KV caching using LLaMA 3.2 1B Instruct for CAG",
+    "Used ChromaDB with a context classifier to enable session recall",
+    "Achieved 67.5% semantic similarity and a 4.5/5 expert-rated empathy score"
   ],
   "githubLink": "https://github.com/shrxyo/EI-Assistant",
   "liveLink": "https://drive.google.com/file/d/1lnxO3OUQ_r8VZjeIuGqcLLY5TlcNxnTn/view?usp=sharing"

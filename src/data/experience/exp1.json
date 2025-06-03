@@ -8,7 +8,7 @@
     { "name": "Node.js", "icon": "assets/nodejs.svg" },
     { "name": "AWS", "icon": "assets/aws.svg" }
   ],
-  "context": "Metropolis Healthcare is a multinational diagnostic lab chain headquartered in Mumbai, with over 124 clinical laboratories and 2400 collection centers across 7 countries. As a Data Science Intern, I worked with the marketing and R&D teams to improve revenue insights and enhance user experience on the mobile platform.",
+  "context": "Metropolis Healthcare is a diagnostic lab chain headquartered in Mumbai. As a Data Science Intern, I worked with the marketing and R&D teams to improve revenue insights and enhance user experience on the mobile platform.",
   "objectives": [
     "Cleaned and organized over 2 million rows of marketing data (vaccinations, diagnostics) spanning 4 months to improve data quality.",
     "Analyzed monthly revenue trends using SQL and Tableau to identify anomalies and propose purchase optimization strategies.",

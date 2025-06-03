@@ -19,21 +19,20 @@
         "icon": "src/assets/folder.png"
       }
     ],
-    "context": "A collaborative task management application that helps teams organize, track, and manage their work efficiently with real-time updates and intuitive features.",
+    "context": "A project that explored the predictive potential of sentiment analysis on financial documents, specifically targeting SEC 10-K filings from publicly listed companies.",
     "objectives": [
-      "Develop a real-time collaborative task management system",
-      "Create an intuitive and user-friendly interface",
-      "Implement team collaboration features",
-      "Ensure data persistence and synchronization",
-      "Build robust task organization and filtering capabilities"
+      "Built a sentiment extraction model tailored for financial language using Loughran-McDonald lexicon",
+      "Analyzed over 100 SEC 10-K reports to derive investment-related sentiment",
+      "Applied Jaccard and cosine similarity to enhance document comparison and sentiment weighting",
+      "Demonstrated model’s effectiveness by achieving a Sharpe ratio of 3",
+      "Evaluated potential of textual data in guiding investment decision-making"
     ],
     "features": [
-      "Real-time task updates and notifications",
-      "Team collaboration and task assignment",
-      "Task categorization and priority levels",
-      "Progress tracking and deadline management",
-      "User roles and permissions",
-      "Activity timeline and task history"
+      "Integrated NLTK for tokenization and preprocessing",
+      "Used Loughran-McDonald dictionary for finance-specific sentiment scoring",
+      "Implemented Jaccard-cosine hybrid similarity for enhanced context matching",
+      "Built and tested the model in Google Colab",
+      "Produced actionable sentiment insights from unstructured annual reports"
     ],
     "githubLink": "https://colab.research.google.com/drive/1Z2W2m2aUqAylvIKR7V0zrp5N7R6Kut3g?usp=sharing",
     "liveLink": "https://your-task-app-url.com"

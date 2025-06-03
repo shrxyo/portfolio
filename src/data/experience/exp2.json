@@ -8,11 +8,11 @@
     { "name": "Sass", "icon": "assets/sass.svg" },
     { "name": "Jest", "icon": "assets/jest.svg" }
   ],
-  "context": "Webify Labs specializes in building modern, responsive websites for startups. I worked as a Frontend Developer, focusing on UI/UX and performance.",
+  "context": "Completed a 30-day onsite externship program at NUS, which included deep learning lectures by university professors, a Data Analysis for Big Data session by AWS professionals and a project component focused on deep learning topics.",
   "objectives": [
-    "Built responsive landing pages for clients",
-    "Implemented unit and integration tests",
-    "Collaborated with designers for pixel-perfect UI",
-    "Enhanced accessibility and cross-browser support"
-  ]
+    "Built SAFESCAN, a YOLOv8-based model for detecting safety gear at construction sites, achieving ~80% accuracy on helmets, gloves, and protective clothing.",
+    "Developed a real-time monitoring system using Flask, capable of processing live video feeds at 30 fps for safety compliance.",
+    "Applied deep learning techniques to solve a practical computer vision task aimed at improving workplace safety."
+  ],
+  "githubLink": "https://github.com/GIRIAYUSH/SAFESCAN"
 } 

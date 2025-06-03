@@ -8,11 +8,12 @@
     { "name": "Pandas", "icon": "assets/pandas.svg" },
     { "name": "Jupyter", "icon": "assets/jupyter.svg" }
   ],
-  "context": "DataNest Inc. is a data analytics startup. As an intern, I assisted in data cleaning, analysis, and visualization for client projects.",
+  "context": "Stockone is a Shipsy acquired company offering warehouse and inventory management software solutions. As a data analyst intern, I worked with the engineering and product teams to improve warehouse operations through data and design.",
   "objectives": [
-    "Cleaned and processed large datasets",
-    "Created data visualizations for reports",
-    "Automated data pipelines using Python",
-    "Presented findings to the team"
+    "Analyzed warehouse databases with over 5 million rows using PostgreSQL to identify patterns in SKU inventory tracking.",
+    "Visualized key insights directly on the Stockone dashboard utilizing python.",
+    "Contributed to the design of the Stockone 2.0 prototype.",
+    "Developed a secure and efficient activity page using Django and Sentry, reducing system errors and improving user experience.",
+    "Gained hands-on experience with Warehouse Management Systems (WMS)."
   ]
 } 

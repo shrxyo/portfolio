@@ -19,21 +19,20 @@
       "icon": "src/assets/folder.png"
     }
   ],
-  "context": "A full-stack e-commerce platform designed to provide a seamless shopping experience with modern features and robust backend functionality.",
+  "context": "A research project focused on handling class imbalance in medical transcription datasets by generating synthetic data using Large Language Models and comparing their effectiveness against traditional augmentation methods.",
   "objectives": [
-    "Create a scalable and secure e-commerce platform",
-    "Implement user authentication and authorization",
-    "Develop a responsive and intuitive user interface",
-    "Integrate secure payment processing",
-    "Build an efficient product management system"
+    "Augmented a highly imbalanced medical transcription dataset using LLMs like ClinicalBERT, ALBERT, GPT-Neo, and T5",
+    "Generated approximately 800 synthetic samples to boost minority class representation",
+    "Benchmarked LLM-based augmentation against SMOTE using two model architectures",
+    "Trained and evaluated CNN and CNN+BiLSTM classifiers on the augmented datasets",
+    "Demonstrated the effectiveness of domain-specific LLMs in improving minority class accuracy"
   ],
   "features": [
-    "User authentication and profile management",
-    "Product catalog with search and filtering",
-    "Shopping cart and wishlist functionality",
-    "Secure payment gateway integration",
-    "Order tracking and management system",
-    "Admin dashboard for inventory management"
+    "Domain-specific augmentation using ClinicalBERT and ALBERT",
+    "Applied text-to-text generation and paraphrasing using T5 and GPT-Neo",
+    "Implemented synonym replacement and strategic masking techniques",
+    "Achieved 94% accuracy with ALBERT and 93% with ClinicalBERT on CNN classifiers",
+    "Outperformed traditional SMOTE baseline which achieved only 53% accuracy"
   ],
   "liveLink": "https://drive.google.com/file/d/1IziQ74_yzfVqkXb4XnAp94QCOeKvhXHF/view?usp=sharing"
 } 

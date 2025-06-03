@@ -10,6 +10,18 @@ export default function ExperienceDetail({ expId, onBack, data }) {
         <div className="text-lg font-semibold mb-4 flex items-center gap-2">
           {data.dates}
         </div>
+        {data.githubLink && (
+          <div className="flex gap-4 mb-6">
+            <a
+              href={data.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 text-white px-4 py-1 rounded shadow hover:bg-gray-700 transition text-xs cursor-pointer"
+            >
+              Code
+            </a>
+          </div>
+        )}
         <div className="flex gap-6 mb-6 flex-wrap">
           {data.technologies.map(tech => (
             <div key={tech.name} className="flex flex-col items-center">
