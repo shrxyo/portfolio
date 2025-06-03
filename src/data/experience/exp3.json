@@ -3,11 +3,7 @@
   "designation": "Data Analyst Intern",
   "dates": "May 2023 - June 2023",
   "mainHeading": "Stockone: A Shipsy Company - Data Analyst Intern",
-  "technologies": [
-    { "name": "Python", "icon": "assets/python.svg" },
-    { "name": "Pandas", "icon": "assets/pandas.svg" },
-    { "name": "Jupyter", "icon": "assets/jupyter.svg" }
-  ],
+  "technologies": [ "Python", "Figma", "PostGRE SQL", "Django", "Sentry"],
   "context": "Stockone is a Shipsy acquired company offering warehouse and inventory management software solutions. As a data analyst intern, I worked with the engineering and product teams to improve warehouse operations through data and design.",
   "objectives": [
     "Analyzed warehouse databases with over 5 million rows using PostgreSQL to identify patterns in SKU inventory tracking.",

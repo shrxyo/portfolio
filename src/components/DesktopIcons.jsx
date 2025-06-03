@@ -47,13 +47,13 @@ export default function DesktopIcons({ onPortfolioClick, onContactClick, selecte
           key={index}
           onClick={() => handleIconClick(icon, index)}
           className="flex flex-col items-center cursor-pointer group"
-          style={{ width: isMobile ? '52px' : '80px' }}
+          style={{ width: isMobile ? '54px' : '80px' }}
           data-desktop-icon={true}
         >
           <img
             src={icon.icon}
             alt={icon.label}
-            className={`${isMobile ? 'w-6 h-6' : 'w-12 h-12'} mb-1`}
+            className={`${isMobile ? 'w-9 h-9' : 'w-12 h-12'} mb-1`}
           />
           <p className={`text-sm text-white text-center px-1 [text-shadow:_1px_1px_2px_rgba(0,0,0,0.9)] ${
             selectedIconIndex === index ? 'bg-blue-700' : ''

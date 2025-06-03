@@ -6,8 +6,8 @@ export default function ExperienceDetail({ expId, onBack, data }) {
   return (
     <div className="w-full h-full overflow-y-auto">
       <div className="max-w-4xl mx-auto p-4">
-        <div className="text-2xl font-bold mb-2">{data.mainHeading}</div>
-        <div className="text-lg font-semibold mb-4 flex items-center gap-2">
+        <div className="text-2xl font-bold mb-2 text-justify">{data.mainHeading}</div>
+        <div className="text-lg font-semibold mb-4 flex items-center gap-2 text-justify">
           {data.dates}
         </div>
         {data.githubLink && (
@@ -22,11 +22,11 @@ export default function ExperienceDetail({ expId, onBack, data }) {
             </a>
           </div>
         )}
-        <div className="font-bold mb-1 underline">Tech Stack:</div>
+        <div className="font-bold mb-1 underline text-justify">Tech Stack:</div>
         <div className="flex gap-6 mb-6 flex-wrap">
         
           {data.technologies && (
-            <span className="italic text-sm">
+            <span className="italic text-sm text-justify">
               {Array.isArray(data.technologies[0]) || typeof data.technologies[0] === 'string'
                 ? data.technologies.join(', ')
                 : data.technologies.map(t => t.name).join(', ')}
@@ -34,12 +34,12 @@ export default function ExperienceDetail({ expId, onBack, data }) {
           )}
         </div>
         <div className="mb-4">
-          <div className="font-bold mb-1 underline">Context:</div>
-          <div className="text-sm">{data.context}</div>
+          <div className="font-bold mb-1 underline text-justify">Context:</div>
+          <div className="text-sm text-justify">{data.context}</div>
         </div>
         <div className="mb-4">
-          <div className="font-bold mb-1 underline">Objectives:</div>
-          <ul className="list-disc ml-6 text-sm">
+          <div className="font-bold mb-1 underline text-justify">Objectives:</div>
+          <ul className="list-disc ml-6 text-sm text-justify">
             {data.objectives.map((obj, i) => (
               <li key={i}>{obj}</li>
             ))}

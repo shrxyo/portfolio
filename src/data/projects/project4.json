@@ -1,24 +1,7 @@
 {
     "mainHeading": "Leveraging Sentimental Analysis on Annual Reports of Publicly Listed Companies.",
     "dates": "October 2022 - January 2023",
-    "technologies": [
-      {
-        "name": "React",
-        "icon": "src/assets/folder.png"
-      },
-      {
-        "name": "Firebase",
-        "icon": "src/assets/folder.png"
-      },
-      {
-        "name": "Material-UI",
-        "icon": "src/assets/folder.png"
-      },
-      {
-        "name": "Redux",
-        "icon": "src/assets/folder.png"
-      }
-    ],
+    "technologies": [ "Python", "NLTK", "Google Colab", "Semantic similarity" ],
     "context": "A project that explored the predictive potential of sentiment analysis on financial documents, specifically targeting SEC 10-K filings from publicly listed companies.",
     "objectives": [
       "Built a sentiment extraction model tailored for financial language using Loughran-McDonald lexicon",
@@ -34,6 +17,5 @@
       "Built and tested the model in Google Colab",
       "Produced actionable sentiment insights from unstructured annual reports"
     ],
-    "githubLink": "https://colab.research.google.com/drive/1Z2W2m2aUqAylvIKR7V0zrp5N7R6Kut3g?usp=sharing",
-    "liveLink": "https://your-task-app-url.com"
+    "githubLink": "https://colab.research.google.com/drive/1Z2W2m2aUqAylvIKR7V0zrp5N7R6Kut3g?usp=sharing"
   } 

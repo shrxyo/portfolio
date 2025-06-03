@@ -3,11 +3,7 @@
   "designation": "Data Science Intern",
   "dates": "Feb 2024 - May 2024",
   "mainHeading": "Metropolis Healthcare - Data Science Intern",
-  "technologies": [
-    { "name": "React", "icon": "assets/react.svg" },
-    { "name": "Node.js", "icon": "assets/nodejs.svg" },
-    { "name": "AWS", "icon": "assets/aws.svg" }
-  ],
+  "technologies": [ "Python", "MySQL", "Tableau", "RAG", "LLM Chatbot", "Microsoft Excel" ],
   "context": "Metropolis Healthcare is a diagnostic lab chain headquartered in Mumbai. As a Data Science Intern, I worked with the marketing and R&D teams to improve revenue insights and enhance user experience on the mobile platform.",
   "objectives": [
     "Cleaned and organized over 2 million rows of marketing data (vaccinations, diagnostics) spanning 4 months to improve data quality.",

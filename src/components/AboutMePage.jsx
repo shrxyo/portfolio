@@ -8,7 +8,7 @@ export default function AboutMePage() {
           <div className="w-32 h-32 bg-gray-300 flex-shrink-0 mb-4 sm:mb-0"></div>
 
           <div className="flex-1">
-            <p className="text-base text-justify">
+            <p className="text-base text-justify mb-6">
               Hi, i'm Shreya Balakrishna! I'm a computer science grad student at the university of massachusetts amherst. I mainly work with natural language processing and frontend development. My experience spans traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision systems, dialog agents with LLMs and retrieval, and frontend tools like react, tailwind, and django.
             </p>
           </div>

@@ -1,24 +1,7 @@
 {
   "mainHeading": "SomniSage: Sleep Stage Scoring and personalized intervention system.",
   "dates": "January 2024 - May 2024",
-  "technologies": [
-    {
-      "name": "React",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "Firebase",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "Material-UI",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "Redux",
-      "icon": "src/assets/folder.png"
-    }
-  ],
+  "technologies": [ "Python", "Tensorflow"],
   "context": "College capstone project aimed at improving automated sleep stage classification and supporting personalized treatment strategies using deep learning on physiological signal data.",
   "objectives": [
     "Researched sleep stage subtyping using Siamese and CNN-BiLSTM models",
@@ -33,6 +16,5 @@
     "Integrated TensorFlow-based training pipeline with cross-validation",
     "Improved classification performance through feature engineering and normalization",
     "Currently exploring a knowledge graph extension to model interrelations between sleep stages, disorders, and interventions"
-  ],
-  "liveLink": "https://your-task-app-url.com"
+  ]
 } 

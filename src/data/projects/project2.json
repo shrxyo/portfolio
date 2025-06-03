@@ -1,24 +1,7 @@
 {
   "mainHeading": "Text augmentation using LLMs in Medical Transcripts.",
   "dates": "September 2024 - December 2024",
-  "technologies": [
-    {
-      "name": "React",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "Node.js",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "MongoDB",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "Express",
-      "icon": "src/assets/folder.png"
-    }
-  ],
+  "technologies": [ "Python", "Prompt Engineering", "OpenAI API", "LLMs" ],
   "context": "A research project focused on handling class imbalance in medical transcription datasets by generating synthetic data using Large Language Models and comparing their effectiveness against traditional augmentation methods.",
   "objectives": [
     "Augmented a highly imbalanced medical transcription dataset using LLMs like ClinicalBERT, ALBERT, GPT-Neo, and T5",

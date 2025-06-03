@@ -3,11 +3,7 @@
   "designation": "Deep Learning Research Extern",
   "dates": "Jun 2023 - July 2023",
   "mainHeading": "National University of Singapore - Deep Learning Research Extern",
-  "technologies": [
-    { "name": "Vue.js", "icon": "assets/vue.svg" },
-    { "name": "Sass", "icon": "assets/sass.svg" },
-    { "name": "Jest", "icon": "assets/jest.svg" }
-  ],
+  "technologies": [ "Python", "HTML", "CSS", "Flask", "YOLOv8"],
   "context": "Completed a 30-day onsite externship program at NUS, which included deep learning lectures by university professors, a Data Analysis for Big Data session by AWS professionals and a project component focused on deep learning topics.",
   "objectives": [
     "Built SAFESCAN, a YOLOv8-based model for detecting safety gear at construction sites, achieving ~80% accuracy on helmets, gloves, and protective clothing.",
