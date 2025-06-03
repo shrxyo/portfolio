@@ -1,28 +1,8 @@
 {
   "mainHeading": "Emotional Intelligence Assistant using a Hybrid Augmented Generation Framework.",
   "dates": "January 2025 - May 2025",
-  "technologies": [
-    {
-      "name": "Python",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "HF Transformers",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "OpenAI API",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "LLaMA 3.2",
-      "icon": "src/assets/folder.png"
-    },
-    {
-      "name": "ChromaDB",
-      "icon": "src/assets/folder.png"
-    }
-  ],
+  "technologies": [ "Python", "HuggingFace Transformers", "OpenAI API", "ChromaDB", "LLaMA 3.2"],
+
   "context": "A research-based multi-turn therapy assistant built using a hybrid generation pipeline that combined Retrieval-Augmented Generation (RAG) and Cache-Augmented Generation (CAG) to enhance emotional intelligence and memory retention in chatbot conversations.",
   "objectives": [
     "Built a chatbot capable of emotionally supportive, therapy-style dialogue",

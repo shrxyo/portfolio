@@ -36,14 +36,16 @@ export default function ProjectDetail({ projectId, onBack, data }) {
         </div>
 
         {/* Technologies */}
-        <div className="flex gap-6 mb-6 flex-wrap">
-          {data.technologies.map(tech => (
-            <div key={tech.name} className="flex flex-col items-center">
-              <img src={tech.icon} alt={tech.name} className="w-12 h-12 mb-1" />
-              <span className="text-xs font-semibold">{tech.name}</span>
-            </div>
-          ))}
-        </div>
+        {data.technologies && (
+          <div className="mb-6">
+            <div className="font-bold mb-1 underline">Tech Stack:</div>
+            <span className="italic text-sm">
+              {Array.isArray(data.technologies[0]) || typeof data.technologies[0] === 'string'
+                ? data.technologies.join(', ')
+                : data.technologies.map(t => t.name).join(', ')}
+            </span>
+          </div>
+        )}
 
         {/* Context */}
         <div className="mb-4">
