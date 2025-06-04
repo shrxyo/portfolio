@@ -63,7 +63,7 @@ export default function ContactPanel() {
 
         <div className="grid grid-cols-[auto,1fr] gap-x-4 gap-y-2 items-center">
 
-          <span className="text-xs">To :</span>
+          <span className="text-xs">To:</span>
           <input
             type="email"
             value="shreyabalakrishna02@gmail.com"
@@ -71,7 +71,7 @@ export default function ContactPanel() {
             className="border border-gray-300 px-2 py-1 text-xs bg-gray-100 rounded-sm"
           />
 
-          <span className="text-xs">From :</span>
+          <span className="text-xs">From:</span>
           <input
             type="email"
             name="from_email"
@@ -82,7 +82,7 @@ export default function ContactPanel() {
             className="border border-gray-300 px-2 py-1 text-xs rounded-sm"
           />
 
-          <span className="text-xs">Subject :</span>
+          <span className="text-xs">Subject:</span>
           <input
             type="text"
             name="subject"

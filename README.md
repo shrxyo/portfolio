@@ -1,12 +1,57 @@
-# React + Vite
+# Welcome to my Portfolio!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+I have worked on a Windows XP-inspired, interactive portfolio built with React and TailwindCSS. This project showcases my work, experience, and design skills in a fun, desktop-like environment, complete with draggable windows, a start menu, and custom UI elements.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live Site on Netlify](https://shrxyo.netlify.app)
 
-## Expanding the ESLint configuration
+## Overview
+- **Design:** Mimics the look and feel of Windows XP, with a modern twist and custom fonts.
+- **Responsive:** Works beautifully on both desktop and mobile.
+- **Interactive:** Draggable windows, animated taskbar, and clickable desktop icons.
+- **Accessible:** Keyboard navigation and screen reader friendly.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+- **React** (functional components, hooks)
+- **TailwindCSS** (utility-first styling)
+- **react-rnd** (draggable/resizable windows)
+- **Custom assets** (icons, wallpaper, character art)
+
+## Screenshots
+
+![Desktop Screenshot](src/assets/screenshot1.png)
+
+![Mobile Screenshot](src/assets/screenshot2.png)
+
+## Getting Started
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/shrxyo/portfolio 
+   cd portfolio
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+4. **Open in your browser:**
+   Visit `http://localhost:5173` 
+
+## Folder Structure
+- `src/components/` — All React components (DesktopIcons, Window, Taskbar, etc.)
+- `src/assets/` — Images, icons, and custom art
+- `src/data/` — Experience and project data (JSON)
+- `src/index.css` — TailwindCSS setup
+
+## Future Work
+- 🎵 **Adding sound effects** for UI interactions and window actions
+- 🎶 **Adding a personalized playlist** for background music
+- 🔄 **Smoother userflow:** Ongoing improvements to navigation and transitions
+
+
+---
+
+**Made with ❤️ by shrxyo**

@@ -47,13 +47,13 @@ export default function ProjectDetail({ projectId, onBack, data }) {
 
         {/* Context */}
         <div className="mb-4">
-          <div className="font-bold mb-1 underline text-justify">Context:</div>
+          <div className="font-bold mb-1 underline text-justify">Overview:</div>
           <div className="text-sm text-justify">{data.context}</div>
         </div>
 
         {/* Objectives */}
         <div className="mb-4">
-          <div className="font-bold mb-1 underline text-justify">Objectives:</div>
+          <div className="font-bold mb-1 underline text-justify">Project Description:</div>
           <ul className="list-disc ml-6 text-sm text-justify">
             {data.objectives.map((obj, i) => (
               <li key={i}>{obj}</li>

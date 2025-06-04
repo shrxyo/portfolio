@@ -8,7 +8,7 @@ const icons = [
   {
     label: "Resume",
     icon: resumeIcon,
-    onClick: () => window.open("https://drive.google.com/file/d/1G9pC7W7h7co3StkixOIGsM2EUOK40rRr/view?usp=sharing", "_blank"),
+    onClick: () => window.open("https://drive.google.com/file/d/1ocv2bUULbtlP29jDGsKLh2nkUTTfxRj0/view?usp=sharing", "_blank"),
     type: "link"
   },
   {
@@ -55,7 +55,7 @@ export default function DesktopIcons({ onPortfolioClick, onContactClick, selecte
             alt={icon.label}
             className={`${isMobile ? 'w-9 h-9' : 'w-12 h-12'} mb-1`}
           />
-          <p className={`text-sm text-white text-center px-1 [text-shadow:_1px_1px_2px_rgba(0,0,0,0.9)] ${
+          <p className={`text-sm text-white text-center px-1 [text-shadow:_1px_1px_2px_rgba(0,0,0,1)] ${
             selectedIconIndex === index ? 'bg-blue-700' : ''
           }`}>
             {icon.label}

@@ -182,8 +182,8 @@ export default function WindowPage({
     >
       <div className="rounded-sm border-[3px] border-blue-700 bg-white shadow-xl overflow-hidden flex flex-col h-full cursor-default">
         {/* Title Bar */}
-        <div className={`text-white text-sm font-semibold px-4 py-1 flex justify-between items-center ${!isMobile && windowState === 'maximized' ? '' : 'drag-handle'} select-none cursor-default ${isContactWindow ? 'bg-blue-700' : 'bg-blue-700'}`}>
-          <span>{currentPage?.label || 'Window'}</span>
+        <div className={`text-white text-sm font-semibold px-4 py-1 flex justify-between items-center ${!isMobile && windowState === 'maximized' ? '' : 'drag-handle'} select-none cursor-default ${isContactWindow ? 'bg-blue-700' : 'bg-blue-700'} drop-shadow-[2px_2px_4px_rgba(0,0,0,0.10)]`} style={{boxShadow: '2px 2px 6px 0 rgba(0,0,0,0.18)'}}>
+          <span className="[text-shadow:_1px_1px_2px_rgba(0,0,0,0.9)]">{currentPage?.label || 'Window'}</span>
           <div className="text-xs flex gap-1">
             {!isMobile && (
               <>

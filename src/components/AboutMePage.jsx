@@ -12,15 +12,15 @@ export default function AboutMePage() {
 
           <div className="flex-1">
             <p className="text-base text-justify mb-6">
-              Hi, I'm Shreya Balakrishna! I'm a computer science grad student at the university of massachusetts amherst. I mainly work with natural language processing and frontend development. My experience spans traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision systems, dialog agents with LLMs and retrieval, and frontend tools like react, tailwind, and django.
+              Hi, I'm Shreya Balakrishna! I'm a computer science grad student at the University of Massachusetts Amherst. I am passionate about Natural Language Processing and Frontend Development. My experience spans dialog agents utilizing LLMs, traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision models, and frontend frameworks like react, tailwind, and django.
             </p>
           </div>
         </div>
 
         
-        <div className="font-semibold mb-1 underline">what I'm into:</div>
+        {/* <div className="font-semibold mb-1 underline">what I'm into:</div> */}
         <p className="text-base text-justify">
-        I love working on natural language systems powered by retrieval and generative techniques like dialogue agents, assistants, and applied language interfaces. I'm also a designer, so I enjoy combining design with code and this portfolio is one example of that! It's inspired by Windows XP, but with my own design twists like custom fonts and layout interactions. I'm also a big video game nerd and have recently been exploring how games are made.
+        My recent focus has been on natural language systems powered by retrieval and generative techniques like dialogue agents, assistants, and applied language interfaces. I'm also a designer, so I enjoy combining design with code and this portfolio is one example of that! It's inspired by Windows XP, but with my own design twists like custom fonts and layout interactions. I'm also a big video game nerd and have recently been exploring the realm of gamedev as well!
         </p>
 
         <div className="font-semibold mb-1 underline mt-6">what I'm working on right now:</div>

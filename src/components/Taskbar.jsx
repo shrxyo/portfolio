@@ -53,19 +53,21 @@ export default function Taskbar({ windows, onWindowRestore, portfolioCurrentPage
               className={`absolute left-0 bottom-12 bg-white border border-gray-300 rounded shadow-lg p-4 ${isMobile ? 'min-w-[150px]' : 'min-w-[200px]'} z-50`}
             >
               <div className="font-bold mb-2">Social Media</div>
-              <ul className="space-y-2">
+              <ul className="flex flex-col">
                 <li>
-                  <a href="https://github.com/shrxyo" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
+                  <a href="https://github.com/shrxyo" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center cursor-pointer pl-2 py-1 text-left">
                     GitHub
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/shreya-balakrishna-a67772201/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
+                  <div className="w-full h-[1px] bg-blue-200/60 my-1" style={{backdropFilter: 'blur(2px)'}} />
+                  <a href="https://www.linkedin.com/in/shreya-balakrishna-a67772201/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center cursor-pointer pl-2 py-1 text-left">
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/raeneyy/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center gap-2 cursor-pointer">
+                  <div className="w-full h-[1px] bg-blue-200/60 my-1" style={{backdropFilter: 'blur(2px)'}} />
+                  <a href="https://www.instagram.com/raeneyy/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 flex items-center cursor-pointer pl-2 py-1 text-left">
                     Instagram
                   </a>
                 </li>
