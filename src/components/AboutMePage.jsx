@@ -1,15 +1,18 @@
 import React from 'react';
+import CharacterImg from '../assets/Character.png';
 
 export default function AboutMePage() {
   return (
     <div className="w-full h-full overflow-y-auto">
       <div className="max-w-4xl mx-auto p-4">
         <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start">
-          <div className="w-32 h-32 bg-gray-300 flex-shrink-0 mb-4 sm:mb-0"></div>
+          <div className="w-36 h-36 flex-shrink-0 mb-4 sm:mb-0">
+            <img src={CharacterImg} alt="Character" className="w-36 h-36 object-contain" />
+          </div>
 
           <div className="flex-1">
             <p className="text-base text-justify mb-6">
-              Hi, i'm Shreya Balakrishna! I'm a computer science grad student at the university of massachusetts amherst. I mainly work with natural language processing and frontend development. My experience spans traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision systems, dialog agents with LLMs and retrieval, and frontend tools like react, tailwind, and django.
+              Hi, I'm Shreya Balakrishna! I'm a computer science grad student at the university of massachusetts amherst. I mainly work with natural language processing and frontend development. My experience spans traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision systems, dialog agents with LLMs and retrieval, and frontend tools like react, tailwind, and django.
             </p>
           </div>
         </div>
