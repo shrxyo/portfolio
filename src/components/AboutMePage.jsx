@@ -12,7 +12,7 @@ export default function AboutMePage() {
 
           <div className="flex-1">
             <p className="text-base text-justify mb-6">
-              Hi, I'm Shreya Balakrishna! I'm a computer science grad student at the University of Massachusetts Amherst. I am passionate about Natural Language Processing and Frontend Development. My experience spans dialog agents utilizing LLMs, traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision models, and frontend frameworks like react, tailwind, and django.
+              Hi, I'm Shreya Balakrishna! I'm a computer science grad student at the University of Massachusetts Amherst. I am passionate about Natural Language Processing and Frontend Development. My experience spans dialog agents utilizing LLMs, traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision models, and frameworks like react, tailwind, flask and django.
             </p>
           </div>
         </div>
@@ -36,12 +36,7 @@ export default function AboutMePage() {
         <p className="text-base text-justify">
         This summer, I plan to work on some fun and meaningful projects around LLMs and their applications. If you want to collaborate, brainstorm, or even team up for a hackathon, feel free to shoot me an email. I'd love to chat :)
         </p>
-        
-     
-        
-        
-
-        
+ 
       </div>
     </div>
   );
