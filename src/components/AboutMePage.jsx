@@ -26,6 +26,7 @@ export default function AboutMePage() {
         <div className="font-semibold mb-1 underline mt-6">what I'm working on right now:</div>
         <p className="text-base text-justify">
         <ul className="list-disc">
+            <li>Experimenting with multimodal AI (involving audio and textual data).</li>
             <li>Learning how LLMs can be used to build domain-specific dialogue agents.</li>
             <li>Learning Java by building a 2D game (also understanding the basics of gamedev this way!).</li>
             <li>working on this portfolio :)</li>
