@@ -12,7 +12,7 @@ export default function AboutMePage() {
 
           <div className="flex-1">
             <p className="text-base text-justify mb-6">
-              Hi, I'm Shreya Balakrishna! I'm a computer science grad student at the University of Massachusetts Amherst. I am passionate about Natural Language Processing and Frontend Development. My experience spans dialog agents utilizing LLMs, traditional ML algorithms, nlp tasks like sentiment analysis, real-time vision models, and frameworks like react, tailwind, flask and django.
+              Hi, I'm Shreya Balakrishna! I'm a CS grad student at the University of Massachusetts Amherst with a focus on Natural Language Processing and Large Language models. My experience spans dialog agents utilizing LLMs, traditional ML algorithms, NLP tasks like sentiment analysis, real-time vision models, and frameworks like react, tailwind, flask and django.
             </p>
           </div>
         </div>
@@ -20,7 +20,7 @@ export default function AboutMePage() {
         
         {/* <div className="font-semibold mb-1 underline">what I'm into:</div> */}
         <p className="text-base text-justify">
-        My recent focus has been on natural language systems powered by retrieval and generative techniques like dialogue agents, assistants, and applied language interfaces. I'm also a designer, so I enjoy combining design with code and this portfolio is one example of that! It's inspired by Windows XP, but with my own design twists like custom fonts and layout interactions. I'm also a big video game nerd and have recently been exploring the realm of gamedev as well!
+        My recent focus has been on natural language systems powered by retrieval and generative techniques like dialogue agents, assistants, and applied language interfaces. I've started exploring multimodal AI, especially with data that combines audio and text. I'm also a designer, so I enjoy combining design with code and this portfolio is one example of that! It's inspired by Windows XP, but with my own design twists like custom fonts and layout interactions. I'm also a big video game nerd and have recently been exploring the realm of gamedev as well!
         </p>
 
         <div className="font-semibold mb-1 underline mt-6">what I'm working on right now:</div>
