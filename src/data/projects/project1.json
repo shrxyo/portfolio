@@ -2,7 +2,7 @@
   "mainHeading": "RAG+CAG Therapy Bot",
   "dates": "Jan. 2025 – May 2025",
   "technologies": [ "Python", "Langchain", "HF Transformers", "ChromaDB", "OpenAI API", "LLaMA 3.2" ],
-  "context": "Developed a multi-turn therapy assistant by combining Retrieval-Augmented Generation (RAG) with Cache-Augmented Generation (CAG) to improve emotional intelligence, safety, and memory retention in chatbot responses.",
+  "context": "A research-based multi-turn therapy assistant built using a hybrid generation pipeline that combined Retrieval-Augmented Generation (RAG) and Cache-Augmented Generation (CAG) to enhance emotional intelligence and memory retention in chatbot conversations.",
   "objectives": [
     "Fine-tuned GPT‑4o‑mini and configured LLaMA 3.2–1B Instruct for hybrid RAG+CAG pipelines.",
     "Used RAG to retrieve prior session summaries via ChromaDB embeddings, enabling personalized recall.",
