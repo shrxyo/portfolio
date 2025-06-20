@@ -1,20 +1,20 @@
 {
-  "mainHeading": "SomniSage: Sleep Stage Scoring and personalized intervention system.",
-  "dates": "January 2024 - May 2024",
-  "technologies": [ "Python", "Tensorflow"],
-  "context": "College capstone project aimed at improving automated sleep stage classification and supporting personalized treatment strategies using deep learning on physiological signal data.",
+  "mainHeading": "SomniSage: Sleep Stage Classification using Time Series Models",
+  "dates": "Jan. 2024 – May 2024",
+  "technologies": [ "Python", "Tensorflow", "BiLSTM", "Twin CNN", "EEG/EMG/EOG Time Series" ],
+  "context": "Capstone project exploring automated classification of sleep stages using deep learning models on physiological signal data (EEG, EOG, EMG), with the goal of improving sleep disorder diagnosis.",
   "objectives": [
-    "Researched sleep stage subtyping using Siamese and CNN-BiLSTM models",
-    "Trained models on a multi-channel PSG dataset with 2688 features from EEG, EMG, and EOG signals",
-    "Achieved up to 84.5% accuracy in classifying sleep stages",
-    "Explored how deep learning can support diagnosis and intervention in sleep disorders",
-    "Enhanced signal interpretation for better medical insights"
+    "Researched sleep stage subtyping using Siamese and CNN-BiLSTM architectures.",
+    "Segmented and preprocessed time-series PSG recordings (197 whole-night sessions).",
+    "Engineered 2688-dimensional input vectors capturing temporal and spatial signal patterns.",
+    "Classified hypnograms into stages W, R, 1, 2, 3, 4, M, and unscored (‘?’).",
+    "Achieved 84.5% accuracy using CNN-BiLSTM for multi-class classification."
   ],
   "features": [
-    "Developed Siamese and CNN-BiLSTM models for temporal pattern recognition",
-    "Used time-series preprocessing on raw EEG, EMG, and EOG data",
-    "Integrated TensorFlow-based training pipeline with cross-validation",
-    "Improved classification performance through feature engineering and normalization",
-    "Currently exploring a knowledge graph extension to model interrelations between sleep stages, disorders, and interventions"
+    "Combined temporal pattern recognition with spatial signal analysis.",
+    "Implemented custom Softmax layer for 8-class sleep stage scoring.",
+    "Preprocessed noisy signals from EEG, EMG, and EOG recordings.",
+    "Trained and evaluated deep learning models using TensorFlow.",
+    "Proposed future extension with knowledge graph modeling for sleep disorders."
   ]
-} 
+}

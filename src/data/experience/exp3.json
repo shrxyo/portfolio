@@ -1,15 +1,14 @@
 {
-  "company": "Stockone: A Shipsy Company",
+  "company": "Stockone - A Shipsy Company",
   "designation": "Data Analyst Intern",
-  "dates": "May 2023 - June 2023",
-  "mainHeading": "Stockone: A Shipsy Company - Data Analyst Intern",
-  "technologies": [ "Python", "Figma", "PostGRE SQL", "Django", "Sentry"],
-  "context": "Stockone is a Shipsy acquired company offering warehouse and inventory management software solutions. As a data analyst intern, I worked with the engineering and product teams to improve warehouse operations through data and design.",
+  "dates": "Apr 2023 - Jun 2023",
+  "mainHeading": "Stockone - A Shipsy Company - Data Analyst Intern",
+  "technologies": [ "Power BI", "PostgreSQL", "Django", "Sentry" ],
+  "context": "Stockone is a Shipsy-acquired warehouse and inventory management company. As a data analyst intern, I worked on improving operational visibility and resolving system issues through data and backend tools.",
   "objectives": [
-    "Analyzed warehouse databases with over 5 million rows using PostgreSQL to identify patterns in SKU inventory tracking.",
-    "Visualized key insights directly on the Stockone dashboard utilizing python.",
-    "Contributed to the design of the Stockone 2.0 prototype.",
-    "Developed a secure and efficient activity page using Django and Sentry, reducing system errors and improving user experience.",
-    "Gained hands-on experience with Warehouse Management Systems (WMS)."
+    "Built an interactive WMS dashboard using Power BI and PostgreSQL, integrating KPIs for weekly warehouse operations and inventory management across 5M+ rows of data.",
+    "Improved operational visibility by 15% through automated insights into inbound/outbound flows.",
+    "Developed a secure user authentication system using Django and integrated Sentry to monitor user behavior and warehouse-related issues.",
+    "Boosted issue resolution efficiency by 30% by streamlining error tracking and debugging processes."
   ]
-} 
+}

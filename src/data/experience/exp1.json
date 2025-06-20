@@ -1,15 +1,15 @@
 {
   "company": "Metropolis Healthcare",
   "designation": "Data Science Intern",
-  "dates": "Feb 2024 - May 2024",
+  "dates": "Jan 2024 - May 2024",
   "mainHeading": "Metropolis Healthcare - Data Science Intern",
-  "technologies": [ "Python", "MySQL", "Tableau", "RAG", "LLM Chatbot", "Microsoft Excel" ],
-  "context": "Metropolis Healthcare is a diagnostic lab chain headquartered in Mumbai. As a Data Science Intern, I worked with the marketing and R&D teams to improve revenue insights and enhance user experience on the mobile platform.",
+  "technologies": [ "Python", "SQL", "Tableau", "Excel", "AWS S3", "GPT-3.5", "T5", "RAG" ],
+  "context": "Metropolis Healthcare is a diagnostic lab chain headquartered in Mumbai. As a Data Science Intern, I worked with the marketing and R&D teams to improve reporting efficiency and build an AI chatbot for diagnostic report summarization.",
   "objectives": [
-    "Cleaned and organized over 2 million rows of marketing data (vaccinations, diagnostics) spanning 4 months to improve data quality.",
-    "Analyzed monthly revenue trends using SQL and Tableau to identify anomalies and propose purchase optimization strategies.",
-    "Conducted research and ideated an AI-powered in-app chatbot to improve customer navigation and satisfaction.",
-    "Designed chatbot flow to collect user info, recommend diagnostic tests, and provide next steps using LLM + RAG architecture.",
-    "Helped achieve a 20% increase in customer satisfaction (based on employee feedback) during the chatbot prototype phase."
+    "Developed a diagnostic report summarization and analysis system using GPT-3.5 and T5, enabling an AI chatbot to generate simplified, patient-friendly summaries.",
+    "Integrated RAG to retrieve similar medical reports, ensuring chatbot responses were aligned with clinical context.",
+    "Collaborated with the marketing team to analyze over 2 million rows of data, building automated KPI dashboards using Tableau, SQL, and Excel.",
+    "Deployed dashboards to AWS S3, reducing manual weekly reporting effort by over 12 hours.",
+    "Achieved a 20% increase in end-user feedback on report comprehension and usability."
   ]
-} 
+}

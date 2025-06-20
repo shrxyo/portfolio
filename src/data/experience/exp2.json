@@ -1,14 +1,14 @@
 {
   "company": "National University of Singapore",
   "designation": "Deep Learning Research Extern",
-  "dates": "Jun 2023 - July 2023",
+  "dates": "Jun 2023 - Jul 2023",
   "mainHeading": "National University of Singapore - Deep Learning Research Extern",
-  "technologies": [ "Python", "HTML", "CSS", "Flask", "YOLOv8"],
-  "context": "Completed a 30-day onsite externship program at NUS, which included deep learning lectures by university professors, a Data Analysis for Big Data session by AWS professionals and a project component focused on deep learning topics.",
+  "technologies": [ "Python", "YOLOv8", "Flask", "HTML", "CSS" ],
+  "context": "Completed a 30-day research externship at NUS, involving deep learning seminars and a hands-on project focused on computer vision for workplace safety.",
   "objectives": [
-    "Built SAFESCAN, a YOLOv8-based model for detecting safety gear at construction sites, achieving ~80% accuracy on helmets, gloves, and protective clothing.",
-    "Developed a real-time monitoring system using Flask, capable of processing live video feeds at 30 fps for safety compliance.",
-    "Applied deep learning techniques to solve a practical computer vision task aimed at improving workplace safety."
+    "Led the development of SAFESCAN, a construction safety gear detection system using YOLOv8, achieving 82% accuracy on live video feeds.",
+    "Built a Flask-based real-time monitoring portal capable of processing 30 fps video to detect helmets, gloves, clothing, and shoes.",
+    "Improved safety compliance monitoring efficiency by 25% compared to baseline solutions."
   ],
   "githubLink": "https://github.com/GIRIAYUSH/SAFESCAN"
-} 
+}

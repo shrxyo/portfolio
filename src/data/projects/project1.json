@@ -1,23 +1,22 @@
 {
-  "mainHeading": "Emotional Intelligence Assistant using a Hybrid Augmented Generation Framework.",
-  "dates": "January 2025 - May 2025",
-  "technologies": [ "Python", "HuggingFace Transformers", "OpenAI API", "ChromaDB", "LLaMA 3.2"],
-
-  "context": "A research-based multi-turn therapy assistant built using a hybrid generation pipeline that combined Retrieval-Augmented Generation (RAG) and Cache-Augmented Generation (CAG) to enhance emotional intelligence and memory retention in chatbot conversations.",
+  "mainHeading": "RAG+CAG Therapy Bot",
+  "dates": "Jan. 2025 – May 2025",
+  "technologies": [ "Python", "Langchain", "HF Transformers", "ChromaDB", "OpenAI API", "LLaMA 3.2" ],
+  "context": "Developed a multi-turn therapy assistant by combining Retrieval-Augmented Generation (RAG) with Cache-Augmented Generation (CAG) to improve emotional intelligence, safety, and memory retention in chatbot responses.",
   "objectives": [
-    "Built a chatbot capable of emotionally supportive, therapy-style dialogue",
-    "Integrated RAG to retrieve past session summaries using ChromaDB",
-    "Injected pre-validated therapeutic knowledge into context using CAG",
-    "Compared open-source and API-based models under the same memory framework",
-    "Evaluated models using semantic similarity and human-rated empathy scores"
+    "Fine-tuned GPT‑4o‑mini and configured LLaMA 3.2–1B Instruct for hybrid RAG+CAG pipelines.",
+    "Used RAG to retrieve prior session summaries via ChromaDB embeddings, enabling personalized recall.",
+    "Leveraged CAG to preload therapeutic knowledge, ensuring grounded and empathetic responses.",
+    "Created a chatbot capable of emotionally-aware, context-rich mental health conversations.",
+    "Achieved strong performance through semantic and human evaluation by a licensed clinical psychologist."
   ],
   "features": [
-    "Hybrid memory pipeline with both RAG and CAG integration",
-    "Fine-tuned GPT-4o-mini on a multi-turn mental therapy dataset",
-    "Implemented KV caching using LLaMA 3.2 1B Instruct for CAG",
-    "Used ChromaDB with a context classifier to enable session recall",
-    "Achieved 67.5% semantic similarity and a 4.5/5 expert-rated empathy score"
+    "Hybrid pipeline combining ChromaDB (RAG) and static knowledge base (CAG).",
+    "Achieved 67.5% semantic similarity (vs. 63% baseline).",
+    "Earned average human rating of 4.5/5 on empathy, clarity, and supportiveness.",
+    "Maintained low-latency inference despite multi-turn context expansion.",
+    "Deployed multi-model evaluation framework with structured memory recall."
   ],
   "githubLink": "https://github.com/shrxyo/EI-Assistant",
   "liveLink": "https://drive.google.com/file/d/1lnxO3OUQ_r8VZjeIuGqcLLY5TlcNxnTn/view?usp=sharing"
-} 
+}
