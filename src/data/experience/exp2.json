@@ -1,10 +1,10 @@
 {
   "company": "National University of Singapore",
-  "designation": "Deep Learning Research Extern",
+  "designation": "Deep Learning Research Intern",
   "dates": "Jun 2023 - Jul 2023",
   "mainHeading": "National University of Singapore - Deep Learning Research Extern",
   "technologies": [ "Python", "YOLOv8", "Flask", "HTML", "CSS" ],
-  "context": "Completed a 30-day research externship at NUS, involving deep learning seminars and a hands-on project focused on computer vision for workplace safety.",
+  "context": "Completed a research internship at NUS, involving deep learning seminars and a hands-on project focused on Real time vision models for workplace safety at construction sites.",
   "objectives": [
     "Led the development of SAFESCAN, a construction safety gear detection system using YOLOv8, achieving 82% accuracy on live video feeds.",
     "Built a Flask-based real-time monitoring portal capable of processing 30 fps video to detect helmets, gloves, clothing, and shoes.",
