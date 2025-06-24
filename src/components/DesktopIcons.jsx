@@ -8,7 +8,7 @@ const icons = [
   {
     label: "Resume",
     icon: resumeIcon,
-    onClick: () => window.open("https://drive.google.com/file/d/1ocv2bUULbtlP29jDGsKLh2nkUTTfxRj0/view?usp=sharing", "_blank"),
+    onClick: () => window.open("https://drive.google.com/file/d/1CDh3Si2dNC_QESQsl8obI4IrImyHhcIj/view?usp=sharing", "_blank"),
     type: "link"
   },
   {
